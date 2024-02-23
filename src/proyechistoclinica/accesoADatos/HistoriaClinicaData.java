@@ -47,7 +47,7 @@ public class HistoriaClinicaData {
     //metodo buscar Historia Clinica por Nombre
     public HistoriaClinica buscarPoNombre(String vNom) {
         HistoriaClinica historiaClinica = null;
-        String sql = "Select * from hclinicas where nombreHist=?";
+        String sql = "Select * from hclinicas where nombreHist=? and estadoHist=1";
         try {
             //Preparo la consulta
             PreparedStatement ps = con.prepareStatement(sql);
@@ -91,7 +91,7 @@ public class HistoriaClinicaData {
         }
     }
     
-    //metodo listar Historia clinica por nombre
+    //metodo listar Historia clinica por nombre activas
     public List<HistoriaClinica> listarHistoClinicas(){
         HistoriaClinica historiaClinica = null;
         ArrayList<HistoriaClinica> listar = new ArrayList();
@@ -122,5 +122,40 @@ public class HistoriaClinicaData {
         }
         return listar;
     }
+    
+    //listar historias clinicas finalizadas
+    public List<HistoriaClinica> listarHistoClinicasFinal(){
+        HistoriaClinica historiaClinica = null;
+        ArrayList<HistoriaClinica> listar = new ArrayList();
+        String sql = "Select h.idHist,h.fechaHist,h.nombreHist,h.idPaci,h.idMedi,h.tratamientoHist,h.fechaHistUlt,p.apellidoPaci,p.nombresPaci,p.dniPaci from hclinicas h inner join pacientes p on h.idPaci=p.idPaci where h.estadoHist=0";
+         try {
+            //preparo la consulta
+            PreparedStatement ps = con.prepareStatement(sql);
+            //ps.setString(1, vNom);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                historiaClinica = new HistoriaClinica();
+                historiaClinica.setIdHist(rs.getInt("idHist"));
+                historiaClinica.setFechaHist(rs.getDate("fechaHist").toLocalDate());
+                historiaClinica.setNombreHist(rs.getString("nombreHist"));
+                paciSelec = paciData.buscarPorId(rs.getInt("idPaci"));
+                historiaClinica.setPaciente(paciSelec);
+                mediSelec = mediData.buscarPorId(rs.getInt("IdMedi"));
+                historiaClinica.setMedico(mediSelec);
+                historiaClinica.setTratamientoHist(rs.getString("tratamientoHist"));
+                historiaClinica.setFechaHistUlt(rs.getDate("fechaHistUlt").toLocalDate());
+                historiaClinica.setEstadoHist(true);
+                listar.add(historiaClinica);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al listar:..."+ ex.getMessage());
+            //Logger.getLogger(HistoriaClinicaData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listar;
+        
+    }
+    
+    
 
 }

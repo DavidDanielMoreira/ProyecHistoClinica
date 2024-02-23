@@ -73,7 +73,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Fecha", "Nombre", "Apellido", "Nombres", "nullDNI"
+                "id", "Fecha", "Nombre", "Apellido", "Nombres", "DNI"
             }
         ));
         jScrollPane1.setViewportView(jtHistoClinicas);
