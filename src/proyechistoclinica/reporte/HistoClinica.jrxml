@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HistoClinica" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="vNomHisto" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     hclinicas.`nombreHist` AS hclinicas_nombreHist,
+     hclinicas.`tratamientoHist` AS hclinicas_tratamientoHist,
+     medicos.`apellidoMedi` AS medicos_apellidoMedi,
+     medicos.`nombresMedi` AS medicos_nombresMedi,
+     pacientes.`apellidoPaci` AS pacientes_apellidoPaci,
+     pacientes.`nombresPaci` AS pacientes_nombresPaci,
+     pacientes.`domicilioPaci` AS pacientes_domicilioPaci,
+     pacientes.`dniPaci` AS pacientes_dniPaci,
+     hclinicas.`idHist` AS hclinicas_idHist
+FROM
+     `medicos` medicos INNER JOIN `hclinicas` hclinicas ON medicos.`idMedi` = hclinicas.`idMedi`
+     INNER JOIN `pacientes` pacientes ON hclinicas.`idPaci` = pacientes.`idPaci`
+WHERE hclinicas.nombreHist = $P!{vNomHisto}]]>
+	</queryString>
+	<field name="hclinicas_nombreHist" class="java.lang.String"/>
+	<field name="hclinicas_tratamientoHist" class="java.lang.String"/>
+	<field name="medicos_apellidoMedi" class="java.lang.String"/>
+	<field name="medicos_nombresMedi" class="java.lang.String"/>
+	<field name="pacientes_apellidoPaci" class="java.lang.String"/>
+	<field name="pacientes_nombresPaci" class="java.lang.String"/>
+	<field name="pacientes_domicilioPaci" class="java.lang.String"/>
+	<field name="pacientes_dniPaci" class="java.lang.String"/>
+	<field name="hclinicas_idHist" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="13" width="224" height="54"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="36"/>
+				</textElement>
+				<text><![CDATA[Historia Clinica:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="412" y="24" width="137" height="29"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="14" y="56" width="555" height="1" />
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="10" width="22" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="10" width="34" height="20"/>
+				<textFieldExpression><![CDATA[$F{hclinicas_idHist}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="0" width="92" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="0" width="132" height="20" />
+				<textFieldExpression><![CDATA[$F{pacientes_apellidoPaci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="20" width="92" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="20" width="132" height="20" />
+				<textFieldExpression><![CDATA[$F{pacientes_nombresPaci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="0" width="58" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DNI:	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="0" width="115" height="20" />
+				<textFieldExpression><![CDATA[$F{pacientes_dniPaci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="20" width="58" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="20" width="182" height="20" />
+				<textFieldExpression><![CDATA[$F{pacientes_domicilioPaci}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="40" width="556" height="1" />
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="136" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="12" width="535" height="98" />
+				<textElement>
+					<font fontName="Arial Narrow" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hclinicas_tratamientoHist}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="13" width="153" height="24" />
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medico Tratante:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="13" width="73" height="20" forecolor="#0000FF" />
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medicos_apellidoMedi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="13" width="73" height="20" forecolor="#0000FF" />
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medicos_nombresMedi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="14" y="7" width="555" height="1" />
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="15" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="12" splitType="Stretch"/>
+	</summary>
+</jasperReport>
