@@ -280,7 +280,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            JOptionPane.showMessageDialog(null, "Ingreso un valor no permitido solamente caracteres...");
+            //JOptionPane.showMessageDialog(null, "Ingreso un valor no permitido solamente caracteres...");
             evt.consume();
         }
     }//GEN-LAST:event_txtApeKeyTyped
@@ -289,7 +289,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (Character.isDigit(c)) {
-            JOptionPane.showMessageDialog(null, "Ingreso un valor no permitido solamente caracteres...");
+            //JOptionPane.showMessageDialog(null, "Ingreso un valor no permitido solamente caracteres...");
             evt.consume();
         }
     }//GEN-LAST:event_txtNomKeyTyped

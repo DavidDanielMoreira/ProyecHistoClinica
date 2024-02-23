@@ -95,6 +95,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         });
         jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 540, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total de pacientes activos:");
         jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
         jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 255, 60, -1));
@@ -109,7 +110,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
