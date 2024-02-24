@@ -201,6 +201,35 @@ public class PacienteData {
         return listar;
     }
     
-    
+    //metodo buscar Paciente por Apellido
+    public Paciente buscarPorApellidi(String vApe){
+        Paciente paciente = null;
+        String sql = "Select * from pacientes where apellidoPaci=? and estadoPaci=1";
+        try {
+            //preparo la consulta
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, vApe);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                paciente = new Paciente();
+                paciente.setIdPaci(rs.getInt("idPaci"));
+                paciente.setApellidoPaci(rs.getString("apellidoPaci"));
+                paciente.setNombresPaci(rs.getString("nombresPaci"));
+                paciente.setDomicilioPaci(rs.getString("domicilioPaci"));
+                paciente.setDniPaci(rs.getString("dniPaci"));
+                paciente.setTipoSangrePaci(rs.getString("tipoSangrePaci"));
+                paciente.setSexoPaci(rs.getString("sexoPaci"));
+                paciente.setFechaNacPaci(rs.getDate("fechaNacPaci").toLocalDate());
+                paciente.setTelefonoPaci(rs.getString("telefonoPaci"));
+                paciente.setEstadoPaci(true);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error de busqueda por DNI..." + ex.getMessage());
+            //Logger.getLogger(PacienteData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return paciente;
+    }
 
 }

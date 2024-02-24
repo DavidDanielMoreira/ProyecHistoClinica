@@ -40,7 +40,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
-        setPreferredSize(new java.awt.Dimension(700, 550));
+        setPreferredSize(new java.awt.Dimension(750, 600));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);

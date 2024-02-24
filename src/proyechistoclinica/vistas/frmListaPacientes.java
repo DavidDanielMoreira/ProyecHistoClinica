@@ -1,4 +1,3 @@
-
 package proyechistoclinica.vistas;
 
 import proyechistoclinica.entidades.*;
@@ -6,10 +5,13 @@ import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+
 public class frmListaPacientes extends javax.swing.JInternalFrame {
+
     private DefaultTableModel modelo = new DefaultTableModel();
     private PacienteData paciData = new PacienteData();
     private ArrayList<Paciente> listarPaci;
+
     public frmListaPacientes() {
         initComponents();
         crearCabecera();
@@ -17,7 +19,6 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         totalActivos();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -31,28 +32,34 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         btnCerrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtApe = new javax.swing.JTextField();
+        jrDni = new javax.swing.JRadioButton();
+        jrApe = new javax.swing.JRadioButton();
 
         setClosable(true);
         setTitle("Listados Pacientes");
-        setPreferredSize(new java.awt.Dimension(650, 400));
+        setPreferredSize(new java.awt.Dimension(700, 400));
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelDatos.setBackground(new java.awt.Color(0, 51, 51));
         jPanelDatos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanelDatos.setPreferredSize(new java.awt.Dimension(550, 370));
         jPanelDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el Dni:");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
+        txtDni.setEnabled(false);
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDniKeyReleased(evt);
             }
         });
-        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 540, -1));
+        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 250, -1));
 
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,7 +91,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
             jtPacientes.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
-        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 540, 180));
+        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 540, 180));
 
         btnCerrar.setBackground(new java.awt.Color(255, 0, 0));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
@@ -93,14 +100,46 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 540, -1));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 540, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total de pacientes activos:");
-        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
-        jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 255, 60, -1));
+        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
+        jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 295, 60, -1));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 580, 350));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Ingrese el apellido:");
+        jPanelDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        txtApe.setEnabled(false);
+        txtApe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApeKeyReleased(evt);
+            }
+        });
+        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 250, -1));
+
+        jrDni.setBackground(new java.awt.Color(0, 51, 51));
+        jrDni.setForeground(new java.awt.Color(255, 255, 255));
+        jrDni.setText("Buscar por DNI:");
+        jrDni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jrDniMouseClicked(evt);
+            }
+        });
+        jPanelDatos.add(jrDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jrApe.setBackground(new java.awt.Color(0, 51, 51));
+        jrApe.setForeground(new java.awt.Color(255, 255, 255));
+        jrApe.setText("Buscar por apellido:");
+        jrApe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jrApeMouseClicked(evt);
+            }
+        });
+        jPanelDatos.add(jrApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 580, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,7 +149,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
         );
 
         pack();
@@ -124,23 +163,59 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
     private void txtDniKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyReleased
         // TODO add your handling code here:
         limpiarTabla();
-         buscPaci();
+        buscPaciPorDni();
     }//GEN-LAST:event_txtDniKeyReleased
+
+    private void jrDniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrDniMouseClicked
+        // TODO add your handling code here:
+        if (jrDni.isSelected()) {
+            txtDni.setEnabled(true);
+            txtDni.requestFocus();
+            txtApe.setEnabled(false);
+            jrApe.setSelected(false);
+            txtApe.setText("");
+            limpiarTabla();
+            cargarTabla();
+        }
+    }//GEN-LAST:event_jrDniMouseClicked
+
+    private void jrApeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrApeMouseClicked
+        // TODO add your handling code here:
+        if (jrApe.isSelected()) {
+            txtApe.setEnabled(true);
+            txtApe.requestFocus();
+            txtDni.setEnabled(false);
+            jrDni.setSelected(false);
+            txtDni.setText("");
+            limpiarTabla();
+            cargarTabla();
+        }
+    }//GEN-LAST:event_jrApeMouseClicked
+
+    private void txtApeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeKeyReleased
+        // TODO add your handling code here:
+        limpiarTabla();
+        buscPorApe();
+    }//GEN-LAST:event_txtApeKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanelDatos;
     private javax.swing.JPanel jPanelFondo;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton jrApe;
+    private javax.swing.JRadioButton jrDni;
     private javax.swing.JTable jtPacientes;
+    private javax.swing.JTextField txtApe;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
     //metodo crear cabecera
-    private void crearCabecera(){
+    private void crearCabecera() {
         modelo.addColumn("Id");
         modelo.addColumn("Apellido");
         modelo.addColumn("Nombres");
@@ -153,39 +228,48 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         jtPacientes.getColumnModel().getColumn(2).setPreferredWidth(150);
         jtPacientes.getColumnModel().getColumn(3).setPreferredWidth(250);
         jtPacientes.getColumnModel().getColumn(4).setPreferredWidth(100);
-        
+
         //establecer alto de la cabecera de la tabla
-        jtPacientes.getTableHeader().setPreferredSize(new java.awt.Dimension(0,30));
+        jtPacientes.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 30));
     }
-    
+
     //metodo cargar tabla
-    private void cargarTabla(){
+    private void cargarTabla() {
         listarPaci = (ArrayList) paciData.listarPacientes();
-        if(listarPaci!=null){
-            for(Paciente listar: listarPaci){
-                modelo.addRow(new Object[]{listar.getIdPaci(),listar.getApellidoPaci(),listar.getNombresPaci(),listar.getDomicilioPaci(),listar.getDniPaci()});
+        if (listarPaci != null) {
+            for (Paciente listar : listarPaci) {
+                modelo.addRow(new Object[]{listar.getIdPaci(), listar.getApellidoPaci(), listar.getNombresPaci(), listar.getDomicilioPaci(), listar.getDniPaci()});
             }
         }
     }
-    
+
     //metodo buscar paciente
-    private void buscPaci(){
-        for(Paciente buscPaci: listarPaci){
-            if(buscPaci.getDniPaci().startsWith(txtDni.getText())){
-                modelo.addRow(new Object[]{buscPaci.getIdPaci(),buscPaci.getApellidoPaci(),buscPaci.getNombresPaci(),buscPaci.getDomicilioPaci(),buscPaci.getDniPaci()});
+    private void buscPaciPorDni() {
+        for (Paciente buscPaci : listarPaci) {
+            if (buscPaci.getDniPaci().startsWith(txtDni.getText())) {
+                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci()});
             }
         }
     }
-    
+
+    //metodo buscar Paciente por Apellido
+    private void buscPorApe() {
+        for (Paciente buscPaci : listarPaci) {
+            if (buscPaci.getApellidoPaci().startsWith(txtApe.getText())) {
+                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci()});
+            }
+        }
+    }
+
     //metodo limpiarTabla
-    private void limpiarTabla(){
-        int cFilas = jtPacientes.getRowCount()-1;
-        for(int f= cFilas; f>=0; f--){
+    private void limpiarTabla() {
+        int cFilas = jtPacientes.getRowCount() - 1;
+        for (int f = cFilas; f >= 0; f--) {
             modelo.removeRow(f);
         }
     }
-    
-    private void totalActivos(){
+
+    private void totalActivos() {
         int cTotal = jtPacientes.getRowCount();
         txtTotal.setText(String.valueOf(cTotal));
     }
