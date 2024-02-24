@@ -39,7 +39,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Listados Pacientes");
-        setPreferredSize(new java.awt.Dimension(700, 400));
+        setPreferredSize(new java.awt.Dimension(650, 500));
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -149,7 +149,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
         );
 
         pack();
