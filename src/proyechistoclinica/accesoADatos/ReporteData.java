@@ -41,9 +41,9 @@ public class ReporteData {
         try {
             //reporte = (JasperReport) JRLoader.loadObjectFromLocation(path);
             reporte = JasperCompileManager.compileReport("src\\proyechistoclinica\\reporte\\HistoClinica.jrxml");
-           Map parametro = new HashMap();
-           parametro.put("vNomHisto", vNomH);
-            JasperPrint jprint = JasperFillManager.fillReport(reporte,parametro, con);
+            Map parametro = new HashMap();
+            parametro.put("vNomHisto", vNomH);
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, con);
             JasperViewer view = new JasperViewer(jprint, false);
             //cerrar el reporte al presionar el boton x
 

@@ -2,6 +2,7 @@ package proyechistoclinica.vistas;
 
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 public class frmInformes extends javax.swing.JInternalFrame {
 
@@ -136,8 +137,14 @@ public class frmInformes extends javax.swing.JInternalFrame {
 
     private void btnListadoHistoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListadoHistoActionPerformed
         // TODO add your handling code here:
-        String vNomHisto = txtNomHisto.getText();
-        repoData.listarHistoClinica(vNomHisto);
+        if (!txtNomHisto.getText().isEmpty()) {
+            String vNomHisto = txtNomHisto.getText();
+            repoData.listarHistoClinica(vNomHisto);
+        }else{
+            JOptionPane.showMessageDialog(null,"Favor de ingresar un nombre de hiatoria clinica:...");
+            txtNomHisto.requestFocus();
+        }
+
 
     }//GEN-LAST:event_btnListadoHistoActionPerformed
 
