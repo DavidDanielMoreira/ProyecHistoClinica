@@ -37,14 +37,14 @@ WHERE hclinicas.nombreHist = $P!{vNomHisto}]]>
 	<title>
 		<band height="72" splitType="Stretch">
 			<staticText>
-				<reportElement x="137" y="13" width="224" height="54"/>
+				<reportElement x="137" y="13" width="224" height="54" />
 				<textElement>
 					<font fontName="Arial Narrow" size="36"/>
 				</textElement>
 				<text><![CDATA[Historia Clinica:]]></text>
 			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="412" y="24" width="137" height="29"/>
+				<reportElement x="412" y="24" width="137" height="29" />
 				<textElement>
 					<font size="14"/>
 				</textElement>
@@ -65,7 +65,7 @@ WHERE hclinicas.nombreHist = $P!{vNomHisto}]]>
 				<text><![CDATA[Id:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="124" y="10" width="34" height="20"/>
+				<reportElement x="124" y="10" width="34" height="20" />
 				<textFieldExpression><![CDATA[$F{hclinicas_idHist}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -73,7 +73,7 @@ WHERE hclinicas.nombreHist = $P!{vNomHisto}]]>
 	<columnHeader>
 		<band height="51" splitType="Stretch">
 			<staticText>
-				<reportElement x="13" y="0" width="92" height="20"/>
+				<reportElement x="13" y="0" width="92" height="20" />
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>

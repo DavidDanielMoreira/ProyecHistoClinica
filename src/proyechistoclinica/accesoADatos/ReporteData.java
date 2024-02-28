@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -41,6 +42,7 @@ public class ReporteData {
         try {
             //reporte = (JasperReport) JRLoader.loadObjectFromLocation(path);
             reporte = JasperCompileManager.compileReport("src\\proyechistoclinica\\reporte\\HistoClinica.jrxml");
+
             Map parametro = new HashMap();
             parametro.put("vNomHisto", vNomH);
             JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, con);
