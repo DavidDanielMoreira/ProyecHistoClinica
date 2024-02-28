@@ -45,7 +45,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNomPaci = new javax.swing.JTextField();
         btnBuscarPaci = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnPacientes = new javax.swing.JButton();
         txtIdPaci = new javax.swing.JTextField();
         jPanelHistoClinica = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -117,8 +117,13 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         });
         jPanelPaci.add(btnBuscarPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 70, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
-        jPanelPaci.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 70, -1));
+        btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
+        btnPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPacientesActionPerformed(evt);
+            }
+        });
+        jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 70, -1));
 
         txtIdPaci.setEditable(false);
         jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 30, -1));
@@ -296,6 +301,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApePaciKeyTyped
 
+    private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPacientesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarHisto;
@@ -304,8 +313,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnPacientes;
     private javax.swing.JComboBox<Medico> cmbMedicos;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
