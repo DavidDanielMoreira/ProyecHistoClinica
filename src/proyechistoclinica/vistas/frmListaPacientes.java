@@ -39,7 +39,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Listados Pacientes");
-        setPreferredSize(new java.awt.Dimension(650, 500));
+        setPreferredSize(new java.awt.Dimension(700, 450));
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,17 +59,17 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 txtDniKeyReleased(evt);
             }
         });
-        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 250, -1));
+        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 250, 25));
 
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Apellido", "Nombres", "Domicilio", "DNI"
+                "Id", "Apellido", "Nombres", "Domicilio", "DNI", "Télefono"
             }
         ));
         jScrollPane1.setViewportView(jtPacientes);
@@ -89,23 +89,26 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
             jtPacientes.getColumnModel().getColumn(4).setMinWidth(60);
             jtPacientes.getColumnModel().getColumn(4).setPreferredWidth(60);
             jtPacientes.getColumnModel().getColumn(4).setMaxWidth(60);
+            jtPacientes.getColumnModel().getColumn(5).setMinWidth(100);
+            jtPacientes.getColumnModel().getColumn(5).setPreferredWidth(100);
+            jtPacientes.getColumnModel().getColumn(5).setMaxWidth(100);
         }
 
-        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 540, 180));
+        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 600, 180));
 
-        btnCerrar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 540, -1));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 330, 540, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total de pacientes activos:");
-        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
-        jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 295, 60, -1));
+        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
+        jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 295, 60, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ingrese el apellido:");
@@ -117,7 +120,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 txtApeKeyReleased(evt);
             }
         });
-        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 250, -1));
+        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 250, 25));
 
         jrDni.setBackground(new java.awt.Color(0, 51, 51));
         jrDni.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,17 +142,17 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         });
         jPanelDatos.add(jrApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 580, 400));
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 640, 390));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
         );
 
         pack();
@@ -221,13 +224,15 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         modelo.addColumn("Nombres");
         modelo.addColumn("Domicilio");
         modelo.addColumn("DNI");
+        modelo.addColumn("Télefono");
         jtPacientes.setModel(modelo);
         //establecer ancho de las columnas de la tabla
         jtPacientes.getColumnModel().getColumn(0).setPreferredWidth(40);
-        jtPacientes.getColumnModel().getColumn(1).setPreferredWidth(100);
-        jtPacientes.getColumnModel().getColumn(2).setPreferredWidth(150);
-        jtPacientes.getColumnModel().getColumn(3).setPreferredWidth(250);
-        jtPacientes.getColumnModel().getColumn(4).setPreferredWidth(100);
+        jtPacientes.getColumnModel().getColumn(1).setPreferredWidth(90);
+        jtPacientes.getColumnModel().getColumn(2).setPreferredWidth(120);
+        jtPacientes.getColumnModel().getColumn(3).setPreferredWidth(210);
+        jtPacientes.getColumnModel().getColumn(4).setPreferredWidth(90);
+        jtPacientes.getColumnModel().getColumn(5).setPreferredWidth(150);
 
         //establecer alto de la cabecera de la tabla
         jtPacientes.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 30));
@@ -238,7 +243,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         listarPaci = (ArrayList) paciData.listarPacientes();
         if (listarPaci != null) {
             for (Paciente listar : listarPaci) {
-                modelo.addRow(new Object[]{listar.getIdPaci(), listar.getApellidoPaci(), listar.getNombresPaci(), listar.getDomicilioPaci(), listar.getDniPaci()});
+                modelo.addRow(new Object[]{listar.getIdPaci(), listar.getApellidoPaci(), listar.getNombresPaci(), listar.getDomicilioPaci(), listar.getDniPaci(), listar.getTelefonoPaci()});
             }
         }
     }

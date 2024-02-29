@@ -97,6 +97,9 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jPanelDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 125, -1, -1));
 
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDniKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDniKeyTyped(evt);
             }
@@ -246,10 +249,10 @@ public class frmPacientes extends javax.swing.JInternalFrame {
             //JOptionPane.showMessageDialog(null, "Solo se permiten ingresar números...");
             evt.consume();
         }
-       if(txtDni.getText().length()>8){
-           JOptionPane.showMessageDialog(null, "Maximo 8 caracteres...");
-           evt.consume();
-       }
+        if (txtDni.getText().length() >= 8) {
+            JOptionPane.showMessageDialog(null, "Maximo 8 caracteres...");
+            evt.consume();
+        }
     }//GEN-LAST:event_txtDniKeyTyped
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -259,26 +262,41 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         // TODO add your handling code here:
-        if ((!txtApe.getText().isEmpty()) && !txtNom.getText().isEmpty()) {
+
+        if ((!txtApe.getText().isEmpty()) && !txtNom.getText().isEmpty() && !txtDni.getText().isEmpty()) {
+
+            paciSelec = paciData.buscarPorDni(txtDni.getText());
             if (paciSelec == null) {
-                int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma el alta del registro?", "ALTAS REGISTRO", JOptionPane.OK_CANCEL_OPTION);
-                if (opcion == 0) {
-                    insertPaci();
-                    limpiarCampos();
+
+                if (paciSelec == null) {
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma el alta del registro?", "ALTAS REGISTRO", JOptionPane.OK_CANCEL_OPTION);
+                    if (opcion == 0) {
+                        insertPaci();
+                        limpiarCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se realizo ninguna alta....");
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "No se realizo ninguna alta....");
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la edición del registro?", "EDITAR REGISTRO", JOptionPane.OK_CANCEL_OPTION);
+                    if (opcion == 0) {
+                        editPaci();
+                        limpiarCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
+                    }
                 }
+
             } else {
-                int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la edición del registro?", "EDITAR REGISTRO", JOptionPane.OK_CANCEL_OPTION);
-                if (opcion == 0) {
-                    editPaci();
-                    limpiarCampos();
-                } else {
-                    JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
-                }
+                JOptionPane.showMessageDialog(null, "El Dni ya existe..." +paciSelec.getApellidoPaci() + " - " +paciSelec.getApellidoPaci());
+                txtDni.requestFocus();
             }
 
+        } else {
+            JOptionPane.showMessageDialog(null, "Faltan datos...");
+            txtApe.requestFocus();
         }
+
+
     }//GEN-LAST:event_btnCargarActionPerformed
 
     private void txtApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeKeyTyped
@@ -301,24 +319,29 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        if(jrEst.isSelected() && paciSelec!=null){
-            int opcion = JOptionPane.showConfirmDialog(this,"¿Confirma la baja del paciente?" +paciSelec.getDniPaci(),"BAJAS PACIENTES", JOptionPane.OK_CANCEL_OPTION);
-            if(opcion==0){
+        if (jrEst.isSelected() && paciSelec != null) {
+            int opcion = JOptionPane.showConfirmDialog(this, "¿Confirma la baja del paciente?" + paciSelec.getDniPaci(), "BAJAS PACIENTES", JOptionPane.OK_CANCEL_OPTION);
+            if (opcion == 0) {
                 bajPaci();
                 limpiarCampos();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(this, "No se realizo ninguna baja...");
-                
+
             }
-        }else{
-            JOptionPane.showMessageDialog(this,"Faltan datos...");
+        } else {
+            JOptionPane.showMessageDialog(this, "Faltan datos...");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-         limpiarCampos();
+        limpiarCampos();
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void txtDniKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtDniKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -352,6 +375,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
     //metodo insertar Paciente a traves de un objecto
     private void insertPaci() {
+
         String vApe = txtApe.getText();
         String vNom = txtNom.getText();
         String vDom = txtDom.getText();
@@ -360,12 +384,15 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         //creo el objecto Paciente
         Paciente paci = new Paciente(vApe, vNom, vDom, vDni, vTSangre, vSexo, vFecha, vTel, true);
         paciData.insertarPaci(paci);
+
     }
-     //metodo bajas pacientes
-    private void bajPaci(){
+    //metodo bajas pacientes
+
+    private void bajPaci() {
         int vId = Integer.parseInt(txtId.getText());
         paciData.bajasPaci(vId);
     }
+
     //metodo buscar por DNI
     private void buscPorDni() {
         String vDni = txtDni.getText();
@@ -391,12 +418,12 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         String vDni = txtDni.getText();
         String vTel = txtTel.getText();
         //creo el objecto Paciente
-        Paciente paci = new Paciente(vId,vApe, vNom, vDom, vDni, vTSangre, vSexo, vFecha, vTel, true);
+        Paciente paci = new Paciente(vId, vApe, vNom, vDom, vDni, vTSangre, vSexo, vFecha, vTel, true);
         paciData.editarPaciente(paci);
     }
 
     //metodo limpiar campos
-    private void limpiarCampos(){
+    private void limpiarCampos() {
         txtId.setText("");
         txtApe.setText("");
         txtNom.setText("");
@@ -406,6 +433,6 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         cmbSexo.setSelectedIndex(0);
         txtTel.setText("");
         txtApe.requestFocus();
-        
+
     }
 }
