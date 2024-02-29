@@ -83,12 +83,12 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 txtDniPaciKeyTyped(evt);
             }
         });
-        jPanelPaci.add(txtDniPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, -1));
+        jPanelPaci.add(txtDniPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 25));
 
         jlFecha.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jlFecha.setForeground(new java.awt.Color(0, 0, 255));
         jlFecha.setText("jLabel2");
-        jPanelPaci.add(jlFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 100, 30));
+        jPanelPaci.add(jlFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 100, 30));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Apellido:");
@@ -100,35 +100,37 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 txtApePaciKeyTyped(evt);
             }
         });
-        jPanelPaci.add(txtApePaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, -1));
+        jPanelPaci.add(txtApePaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 25));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombres:");
         jPanelPaci.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
 
         txtNomPaci.setEditable(false);
-        jPanelPaci.add(txtNomPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 200, -1));
+        jPanelPaci.add(txtNomPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 200, 25));
 
+        btnBuscarPaci.setBackground(new java.awt.Color(240, 240, 240));
         btnBuscarPaci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/buscar.png"))); // NOI18N
         btnBuscarPaci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarPaciActionPerformed(evt);
             }
         });
-        jPanelPaci.add(btnBuscarPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 70, -1));
+        jPanelPaci.add(btnBuscarPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, -1));
 
+        btnPacientes.setBackground(new java.awt.Color(240, 240, 240));
         btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
         btnPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPacientesActionPerformed(evt);
             }
         });
-        jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 70, -1));
+        jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 100, -1));
 
         txtIdPaci.setEditable(false);
-        jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 30, -1));
+        jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 30, 25));
 
-        jPanelFondo.add(jPanelPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 510, 120));
+        jPanelFondo.add(jPanelPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 580, 120));
 
         jPanelHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
         jPanelHistoClinica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -143,26 +145,27 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomHistoKeyTyped(evt);
             }
         });
-        jPanelHistoClinica.add(txtNomHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, -1));
+        jPanelHistoClinica.add(txtNomHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 25));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Profesional:");
-        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         cmbMedicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbMedicosMouseClicked(evt);
             }
         });
-        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 180, -1));
+        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 190, 25));
 
+        btnBuscarHisto.setBackground(new java.awt.Color(240, 240, 240));
         btnBuscarHisto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/buscar.png"))); // NOI18N
         btnBuscarHisto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarHistoActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnBuscarHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 70, -1));
+        jPanelHistoClinica.add(btnBuscarHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tratamiento:");
@@ -172,48 +175,52 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtTratHisto.setRows(5);
         jScrollPane1.setViewportView(txtTratHisto);
 
-        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 470, 120));
+        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 520, 120));
 
+        btnNuevo.setBackground(new java.awt.Color(240, 240, 240));
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevo.png"))); // NOI18N
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, -1));
+        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, -1));
 
+        btnCargar.setBackground(new java.awt.Color(240, 240, 240));
         btnCargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/guardar.png"))); // NOI18N
         btnCargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 100, -1));
+        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 100, -1));
 
+        btnEliminar.setBackground(new java.awt.Color(240, 240, 240));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/eliminar.png"))); // NOI18N
-        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 100, -1));
+        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 100, -1));
 
+        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 100, -1));
+        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 100, -1));
         jPanelHistoClinica.add(txtIdHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 5, 40, 20));
         jPanelHistoClinica.add(txtFechaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 5, 70, 20));
 
-        jPanelFondo.add(jPanelHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 510, 270));
+        jPanelFondo.add(jPanelHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 580, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
         );
 
         pack();
