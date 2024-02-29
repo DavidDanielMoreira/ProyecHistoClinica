@@ -4,6 +4,7 @@ import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmListaPacientes extends javax.swing.JInternalFrame {
@@ -51,15 +52,18 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el Dni:");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
         txtDni.setEnabled(false);
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDniKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
         });
-        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 250, 25));
+        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 250, 25));
 
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,15 +116,18 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ingrese el apellido:");
-        jPanelDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+        jPanelDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         txtApe.setEnabled(false);
         txtApe.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtApeKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApeKeyTyped(evt);
+            }
         });
-        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 250, 25));
+        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 250, 25));
 
         jrDni.setBackground(new java.awt.Color(0, 51, 51));
         jrDni.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,7 +137,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 jrDniMouseClicked(evt);
             }
         });
-        jPanelDatos.add(jrDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanelDatos.add(jrDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jrApe.setBackground(new java.awt.Color(0, 51, 51));
         jrApe.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,7 +147,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 jrApeMouseClicked(evt);
             }
         });
-        jPanelDatos.add(jrApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+        jPanelDatos.add(jrApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 640, 390));
 
@@ -201,6 +208,27 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         buscPorApe();
     }//GEN-LAST:event_txtApeKeyReleased
 
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+        
+        if(txtDni.getText().length()>=8){
+            JOptionPane.showMessageDialog(null,"Maximo 8 caractres...");
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
+
+    private void txtApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApeKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
@@ -252,7 +280,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
     private void buscPaciPorDni() {
         for (Paciente buscPaci : listarPaci) {
             if (buscPaci.getDniPaci().startsWith(txtDni.getText())) {
-                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci()});
+                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci(),buscPaci.getTelefonoPaci()});
             }
         }
     }
@@ -261,7 +289,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
     private void buscPorApe() {
         for (Paciente buscPaci : listarPaci) {
             if (buscPaci.getApellidoPaci().startsWith(txtApe.getText())) {
-                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci()});
+                modelo.addRow(new Object[]{buscPaci.getIdPaci(), buscPaci.getApellidoPaci(), buscPaci.getNombresPaci(), buscPaci.getDomicilioPaci(), buscPaci.getDniPaci(), buscPaci.getTelefonoPaci()});
             }
         }
     }
