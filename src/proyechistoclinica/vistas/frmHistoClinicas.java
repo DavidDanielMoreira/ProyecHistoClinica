@@ -6,6 +6,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.awt.Image;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -18,13 +19,13 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private Paciente paciSelec;
     private Medico mediSelec;
     private ArrayList<Medico> listarMedi;
-    private LocalDate vFecha = LocalDate.now();
+    private LocalDate vFecha = LocalDate.now(); //fecha actual 
 
     public frmHistoClinicas() {
         initComponents();
-        
+        formatoFecha();
         cargarComboMedi();
-        jlFecha.setText(vFecha.toString());
+        //jlFecha.setText(vFecha.toString());
         //colocar icono en el formulario
         //setIconImage(new ImageIcon(getClass().getResource("../proyechistoclinica/imagen/logoForm.png")).getImage());
          
@@ -412,6 +413,13 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "No existe ninguna historia clinica con ese nombre.." + vNom);
         }
+    }
+    
+    //metodo dar formato a la fecha
+    private void formatoFecha(){
+        DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formaFecha = vFecha.format(forma);
+        jlFecha.setText(formaFecha);
     }
     
     //metodo limpiar campos
