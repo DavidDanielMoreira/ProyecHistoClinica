@@ -1,5 +1,5 @@
 package proyechistoclinica.vistas;
-
+import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -7,7 +7,8 @@ import javax.swing.JOptionPane;
 public class frmInformes extends javax.swing.JInternalFrame {
 
     private ReporteData repoData = new ReporteData();
-
+    private HistoriaClinicaData histoData = new HistoriaClinicaData();
+    private HistoriaClinica histoSelec;
     public frmInformes() {
         initComponents();
     }
@@ -139,7 +140,13 @@ public class frmInformes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (!txtNomHisto.getText().isEmpty()) {
             String vNomHisto = txtNomHisto.getText();
-            repoData.listarHistoClinica(vNomHisto);
+            histoSelec = histoData.buscarPoNombre(vNomHisto);
+            if(histoSelec!=null){
+                repoData.listarHistoClinica(vNomHisto);
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe datos cargados...");
+            }
+            
         }else{
             JOptionPane.showMessageDialog(null,"Favor de ingresar un nombre de hiatoria clinica:...");
             txtNomHisto.requestFocus();
