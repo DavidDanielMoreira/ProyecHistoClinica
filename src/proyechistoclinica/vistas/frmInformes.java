@@ -40,7 +40,10 @@ public class frmInformes extends javax.swing.JInternalFrame {
         jPanelBotones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanelBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnListadoPaci.setText("Listado");
+        btnListadoPaci.setBackground(new java.awt.Color(240, 240, 240));
+        btnListadoPaci.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnListadoPaci.setForeground(new java.awt.Color(0, 0, 0));
+        btnListadoPaci.setText("Mostrar");
         btnListadoPaci.setEnabled(false);
         btnListadoPaci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,19 +56,23 @@ public class frmInformes extends javax.swing.JInternalFrame {
         jLabel1.setText("Pacientes:");
         jPanelBotones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
-        btnListadoHisto.setText("Listado");
+        btnListadoHisto.setBackground(new java.awt.Color(240, 240, 240));
+        btnListadoHisto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnListadoHisto.setForeground(new java.awt.Color(0, 0, 0));
+        btnListadoHisto.setText("Mostrar");
         btnListadoHisto.setEnabled(false);
         btnListadoHisto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListadoHistoActionPerformed(evt);
             }
         });
-        jPanelBotones.add(btnListadoHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+        jPanelBotones.add(btnListadoHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 100, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Historia Clinicas:");
         jPanelBotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
+        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +98,7 @@ public class frmInformes extends javax.swing.JInternalFrame {
         });
         jPanelBotones.add(jrPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
+        btnNuevo.setBackground(new java.awt.Color(240, 240, 240));
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevo.png"))); // NOI18N
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

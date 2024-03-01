@@ -25,6 +25,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         initComponents();
         formatoFecha();
         cargarComboMedi();
+        txtIdPaci.setVisible(false);
+        txtIdHisto.setVisible(false);
+        txtFechaHisto.setVisible(false);
+        
         //jlFecha.setText(vFecha.toString());
         //colocar icono en el formulario
         //setIconImage(new ImageIcon(getClass().getResource("../proyechistoclinica/imagen/logoForm.png")).getImage());
@@ -78,7 +82,6 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jLabel1.setText("Ingrese el DNI:");
         jPanelPaci.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        txtDniPaci.setEditable(false);
         txtDniPaci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDniPaciKeyTyped(evt);
