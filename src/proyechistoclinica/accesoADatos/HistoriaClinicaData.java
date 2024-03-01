@@ -43,6 +43,22 @@ public class HistoriaClinicaData {
         }
 
     }
+    
+    //metodo dar de baja Historia clinica a traves del id
+    public void bajasHistoriaClinica(int vId){
+        String sql = "Update hclinicas set estadoHist=0 where idHist=?";
+        try {
+            //Preparo la consulta
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, vId);
+            ps.executeUpdate();
+            ps.close();
+            JOptionPane.showMessageDialog(null, "Registro dado de baja con exito...");
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, "Error al ejecutar la baja..." +ex.getMessage());
+            //Logger.getLogger(HistoriaClinicaData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     //metodo buscar Historia Clinica por Nombre
     public HistoriaClinica buscarPoNombre(String vNom) {

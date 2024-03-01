@@ -49,7 +49,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el nombre:");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
+        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         txtNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -64,7 +64,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 500, -1));
+        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 400, 25));
 
         jtHistoClinicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,14 +101,14 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
 
         jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 570, 160));
 
-        btnCerrar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 500, -1));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 400, -1));
 
         jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 620, 310));
 

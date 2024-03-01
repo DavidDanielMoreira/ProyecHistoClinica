@@ -173,6 +173,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jPanelHistoClinica.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtTratHisto.setColumns(20);
+        txtTratHisto.setFont(new java.awt.Font("Arial Narrow", 1, 13)); // NOI18N
         txtTratHisto.setRows(5);
         jScrollPane1.setViewportView(txtTratHisto);
 
@@ -198,6 +199,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
         btnEliminar.setBackground(new java.awt.Color(240, 240, 240));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/eliminar.png"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 100, -1));
 
         btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
@@ -312,6 +318,23 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPacientesActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        if(!txtIdHisto.getText().isEmpty() && !txtNomHisto.getText().isEmpty()){
+            int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la baja del registro?","BAJAS HISTORIA CLINICA",JOptionPane.OK_CANCEL_OPTION);
+            if(opcion==0){
+                bajaHisto();
+                limpiarCampos();
+            }else{
+                JOptionPane.showMessageDialog(null, "No se realizo ninguna baja...");
+                limpiarCampos();
+            }
+        }else{
+             JOptionPane.showMessageDialog(null, "Faltan datos completar...");
+             
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -433,5 +456,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtNomHisto.setText("");
         txtTratHisto.setText("");
         txtDniPaci.requestFocus();
+    }
+    
+    //metodo dar de baja Historia clinica a traves del id
+    private void bajaHisto(){
+        int vId = Integer.parseInt( txtIdHisto.getText());
+        histoData.bajasHistoriaClinica(vId);
     }
 }
