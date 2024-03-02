@@ -266,29 +266,26 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         if ((!txtApe.getText().isEmpty()) && !txtNom.getText().isEmpty() && !txtDni.getText().isEmpty()) {
 
             paciSelec = paciData.buscarPorDni(txtDni.getText());
-            if (paciSelec == null) {
 
-                if (paciSelec == null) {
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma el alta del registro?", "ALTAS REGISTRO", JOptionPane.OK_CANCEL_OPTION);
-                    if (opcion == 0) {
-                        insertPaci();
-                        limpiarCampos();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No se realizo ninguna alta....");
-                    }
+            if (paciSelec == null) {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma el alta del registro?", "ALTAS REGISTRO", JOptionPane.OK_CANCEL_OPTION);
+                if (opcion == 0) {
+                    insertPaci();
+                    limpiarCampos();
                 } else {
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la edición del registro?", "EDITAR REGISTRO", JOptionPane.OK_CANCEL_OPTION);
-                    if (opcion == 0) {
-                        editPaci();
-                        limpiarCampos();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
-                    }
+                    JOptionPane.showMessageDialog(null, "No se realizo ninguna alta....");
+                    limpiarCampos();
+                }
+            } else {
+                int opcion = JOptionPane.showConfirmDialog(null, "El DNI ya se encuentra cargado en la base ¿Confirma la edición del registro?", "EDITAR REGISTRO", JOptionPane.OK_CANCEL_OPTION);
+                if (opcion == 0) {
+                    editPaci();
+                    limpiarCampos();
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
+                    limpiarCampos();
                 }
 
-            } else {
-                JOptionPane.showMessageDialog(null, "El Dni ya existe..." +paciSelec.getApellidoPaci() + " - " +paciSelec.getApellidoPaci());
-                txtDni.requestFocus();
             }
 
         } else {
