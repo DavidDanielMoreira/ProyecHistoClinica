@@ -30,12 +30,14 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtIdPaci.setVisible(false);
         txtIdHisto.setVisible(false);
         txtFechaHisto.setVisible(false);
-        
+        btnBuscarPaci.setEnabled(false);
+        btnBuscarHisto.setEnabled(false);
+        btnEliminar.setEnabled(false);
+        btnCargar.setEnabled(false);
+
         //jlFecha.setText(vFecha.toString());
         //colocar icono en el formulario
         //setIconImage(new ImageIcon(getClass().getResource("../proyechistoclinica/imagen/logoForm.png")).getImage());
-         
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -69,9 +71,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         btnCerrar = new javax.swing.JButton();
         txtIdHisto = new javax.swing.JTextField();
         txtFechaHisto = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jpOpcion = new javax.swing.JPanel();
         jrNuevaHisto = new javax.swing.JRadioButton();
         jrEditHistoClinica = new javax.swing.JRadioButton();
+        jrBajasHistoClinica = new javax.swing.JRadioButton();
 
         setClosable(true);
         setTitle("Historia Clinicas");
@@ -161,14 +165,14 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Profesional:");
-        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
+        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         cmbMedicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbMedicosMouseClicked(evt);
             }
         });
-        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 190, 25));
+        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 180, 25));
 
         btnBuscarHisto.setBackground(new java.awt.Color(240, 240, 240));
         btnBuscarHisto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/buscar.png"))); // NOI18N
@@ -188,7 +192,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtTratHisto.setRows(5);
         jScrollPane1.setViewportView(txtTratHisto);
 
-        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 520, 120));
+        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 530, 120));
 
         btnNuevo.setBackground(new java.awt.Color(240, 240, 240));
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevo.png"))); // NOI18N
@@ -197,7 +201,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, -1));
+        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 100, -1));
 
         btnCargar.setBackground(new java.awt.Color(240, 240, 240));
         btnCargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/guardar.png"))); // NOI18N
@@ -206,7 +210,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 100, -1));
+        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 100, -1));
 
         btnEliminar.setBackground(new java.awt.Color(240, 240, 240));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/eliminar.png"))); // NOI18N
@@ -215,7 +219,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 100, -1));
+        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 100, -1));
 
         btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
@@ -224,9 +228,15 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 100, -1));
+        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 100, -1));
         jPanelHistoClinica.add(txtIdHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 5, 40, 20));
         jPanelHistoClinica.add(txtFechaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 5, 70, 20));
+
+        jRadioButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Estado");
+        jPanelHistoClinica.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, -1, -1));
 
         jPanelFondo.add(jPanelHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 580, 270));
 
@@ -242,17 +252,42 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 jrNuevaHistoMouseClicked(evt);
             }
         });
-        jpOpcion.add(jrNuevaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+        jrNuevaHisto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrNuevaHistoActionPerformed(evt);
+            }
+        });
+        jpOpcion.add(jrNuevaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jrEditHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
         jrEditHistoClinica.setForeground(new java.awt.Color(255, 255, 255));
         jrEditHistoClinica.setText("Editar Historia Clinica");
+        jrEditHistoClinica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jrEditHistoClinicaMouseClicked(evt);
+            }
+        });
         jrEditHistoClinica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrEditHistoClinicaActionPerformed(evt);
             }
         });
-        jpOpcion.add(jrEditHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+        jpOpcion.add(jrEditHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+
+        jrBajasHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
+        jrBajasHistoClinica.setForeground(new java.awt.Color(255, 255, 255));
+        jrBajasHistoClinica.setText("Bajas Historia Clinica");
+        jrBajasHistoClinica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jrBajasHistoClinicaMouseClicked(evt);
+            }
+        });
+        jrBajasHistoClinica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrBajasHistoClinicaActionPerformed(evt);
+            }
+        });
+        jpOpcion.add(jrBajasHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
 
         jPanelFondo.add(jpOpcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 580, 60));
 
@@ -306,7 +341,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         // TODO add your handling code here:
         int opcion;
-        if (!txtNomHisto.getText().isEmpty()) {
+        if (!txtNomHisto.getText().isEmpty() && !txtNomPaci.getText().isEmpty()) {
             if (histoSelec == null) {
                 opcion = JOptionPane.showConfirmDialog(null, "¿Confirma el alta del registro?", "ALTAS HISTORIA CLINICA", JOptionPane.OK_CANCEL_OPTION);
                 if (opcion == 0) {
@@ -325,6 +360,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "No se realizo ninguna edición de registro...");
                 }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Faltan datos cargar...");
         }
     }//GEN-LAST:event_btnCargarActionPerformed
 
@@ -345,7 +382,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void txtDniPaciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniPaciKeyTyped
         // TODO add your handling code here:
-           
+
     }//GEN-LAST:event_txtDniPaciKeyTyped
 
     private void txtApePaciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApePaciKeyTyped
@@ -358,34 +395,56 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        if(!txtIdHisto.getText().isEmpty() && !txtNomHisto.getText().isEmpty()){
-            int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la baja del registro?","BAJAS HISTORIA CLINICA",JOptionPane.OK_CANCEL_OPTION);
-            if(opcion==0){
+        if (!txtIdHisto.getText().isEmpty() && !txtNomHisto.getText().isEmpty()) {
+            int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la baja del registro?", "BAJAS HISTORIA CLINICA", JOptionPane.OK_CANCEL_OPTION);
+            if (opcion == 0) {
                 bajaHisto();
                 limpiarCampos();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No se realizo ninguna baja...");
                 limpiarCampos();
             }
-        }else{
-             JOptionPane.showMessageDialog(null, "Faltan datos completar...");
-             
+        } else {
+            JOptionPane.showMessageDialog(null, "Faltan datos completar...");
+
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void jrNuevaHistoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrNuevaHistoMouseClicked
         // TODO add your handling code here:
-       if(jrNuevaHisto.isSelected()){
-            nuevaHistoriaClinica();
-       }
+
     }//GEN-LAST:event_jrNuevaHistoMouseClicked
 
     private void jrEditHistoClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrEditHistoClinicaActionPerformed
         // TODO add your handling code here:
-        if(jrEditHistoClinica.isSelected()){
-             editarHistoriaClinica();
+        if (jrEditHistoClinica.isSelected()) {
+            editarHistoriaClinica();
         }
     }//GEN-LAST:event_jrEditHistoClinicaActionPerformed
+
+    private void jrBajasHistoClinicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrBajasHistoClinicaMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jrBajasHistoClinicaMouseClicked
+
+    private void jrEditHistoClinicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrEditHistoClinicaMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jrEditHistoClinicaMouseClicked
+
+    private void jrNuevaHistoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrNuevaHistoActionPerformed
+        // TODO add your handling code here:
+        if (jrNuevaHisto.isSelected()) {
+            nuevaHistoriaClinica();
+        }
+    }//GEN-LAST:event_jrNuevaHistoActionPerformed
+
+    private void jrBajasHistoClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrBajasHistoClinicaActionPerformed
+        // TODO add your handling code here:
+        if (jrBajasHistoClinica.isSelected()) {
+            bajasHistoriaClinica();
+        }
+    }//GEN-LAST:event_jrBajasHistoClinicaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -406,9 +465,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanelFondo;
     private javax.swing.JPanel jPanelHistoClinica;
     private javax.swing.JPanel jPanelPaci;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlFecha;
     private javax.swing.JPanel jpOpcion;
+    private javax.swing.JRadioButton jrBajasHistoClinica;
     private javax.swing.JRadioButton jrEditHistoClinica;
     private javax.swing.JRadioButton jrNuevaHisto;
     private javax.swing.JTextField txtApePaci;
@@ -427,7 +488,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         String vTratHisto = txtTratHisto.getText();
         int vIdPaci = Integer.parseInt(txtIdPaci.getText());
         //creo el objecto
-        HistoriaClinica histoClinica = new HistoriaClinica(vFecha, vNomHisto, paciSelec, mediSelec, vTratHisto,vFecha, true);
+        HistoriaClinica histoClinica = new HistoriaClinica(vFecha, vNomHisto, paciSelec, mediSelec, vTratHisto, vFecha, true);
         //llamo al metodo insertarHistoriaClinica
         histoData.insertarHistoClinica(histoClinica);
     }
@@ -438,11 +499,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         String vNomHisto = txtNomHisto.getText();
         LocalDate vFecha = LocalDate.parse(txtFechaHisto.getText());
         int vIdPaci = Integer.parseInt(txtIdPaci.getText());
-       String vTratHisto = txtTratHisto.getText();
-       //creo el objecto 
-       HistoriaClinica hclinica = new HistoriaClinica(vIdHisto,vFecha,vNomHisto,histoSelec.getPaciente(),mediSelec,vTratHisto,vFecha,true);
-       histoData.editarHistoClinica(hclinica);
-        
+        String vTratHisto = txtTratHisto.getText();
+        //creo el objecto 
+        HistoriaClinica hclinica = new HistoriaClinica(vIdHisto, vFecha, vNomHisto, histoSelec.getPaciente(), mediSelec, vTratHisto, vFecha, true);
+        histoData.editarHistoClinica(hclinica);
+
     }
 
     //metodo buscar por DNI
@@ -491,16 +552,16 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "No existe ninguna historia clinica con ese nombre.." + vNom);
         }
     }
-    
+
     //metodo dar formato a la fecha
-    private void formatoFecha(){
+    private void formatoFecha() {
         DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formaFecha = vFecha.format(forma);
         jlFecha.setText(formaFecha);
     }
-    
+
     //metodo limpiar campos
-    private void limpiarCampos(){
+    private void limpiarCampos() {
         txtIdPaci.setText("");
         txtDniPaci.setText("");
         txtNomPaci.setText("");
@@ -511,27 +572,50 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtTratHisto.setText("");
         txtDniPaci.requestFocus();
     }
-    
+
     //metodo dar de baja Historia clinica a traves del id
-    private void bajaHisto(){
-        int vId = Integer.parseInt( txtIdHisto.getText());
+    private void bajaHisto() {
+        int vId = Integer.parseInt(txtIdHisto.getText());
         histoData.bajasHistoriaClinica(vId);
     }
-    
+
     //metodo habilitar campos para nueva Historia clinica
-    private void nuevaHistoriaClinica(){
+    private void nuevaHistoriaClinica() {
         txtDniPaci.setEnabled(true);
-        txtDniPaci.requestFocus();;
+        btnBuscarPaci.setEnabled(true);
+        btnBuscarHisto.setEnabled(false);
+        txtDniPaci.requestFocus();
+        btnCargar.setEnabled(true);
+        btnEliminar.setEnabled(false);
         txtNomHisto.setEnabled(false);
         jrEditHistoClinica.setSelected(false);
-        
+        jrBajasHistoClinica.setSelected(false);
+
     }
-    
+
     //meetodo habilitar campos para editar Hitoria clinica
-    private void editarHistoriaClinica(){
+    private void editarHistoriaClinica() {
         txtDniPaci.setEnabled(false);
         txtNomHisto.setEnabled(true);
+        btnBuscarPaci.setEnabled(false);
+        btnBuscarHisto.setEnabled(true);
+        btnCargar.setEnabled(true);
+        btnEliminar.setEnabled(false);
         txtNomHisto.requestFocus();
         jrNuevaHisto.setSelected(false);
+        jrBajasHistoClinica.setSelected(false);
+    }
+
+    //metodo habilitar campos para dar de baja Historia clinica
+    private void bajasHistoriaClinica() {
+        txtDniPaci.setEnabled(false);
+        txtNomHisto.setEnabled(true);
+        btnBuscarPaci.setEnabled(false);
+        btnBuscarHisto.setEnabled(true);
+        txtNomHisto.requestFocus();
+        btnEliminar.setEnabled(true);
+        btnCargar.setEnabled(false);
+        jrNuevaHisto.setSelected(false);
+        jrEditHistoClinica.setSelected(false);
     }
 }
