@@ -199,7 +199,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 100, -1));
         jPanelDatos.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 255, 30, 25));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 510, 370));
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 510, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -209,7 +209,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

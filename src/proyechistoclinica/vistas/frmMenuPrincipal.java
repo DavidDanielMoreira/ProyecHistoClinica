@@ -42,17 +42,17 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
-        setPreferredSize(new java.awt.Dimension(930, 600));
+        setPreferredSize(new java.awt.Dimension(900, 700));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 331, Short.MAX_VALUE)
+            .addGap(0, 663, Short.MAX_VALUE)
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
