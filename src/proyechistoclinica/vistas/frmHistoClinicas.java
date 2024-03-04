@@ -18,7 +18,9 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private HistoriaClinica histoSelec;
     private Paciente paciSelec;
     private Medico mediSelec;
-    private ArrayList<Medico> listarMedi;
+    private Medico datosMedi;
+    private ArrayList<Medico> listarMedicos;
+    private ArrayList<Medico> listaMedico;
     private LocalDate vFecha = LocalDate.now(); //fecha actual 
 
     public frmHistoClinicas() {
@@ -349,6 +351,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                     limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(null, "No se realizo ningun alta de registro...");
+                    limpiarCampos();
                 }
 
             } else {
@@ -358,6 +361,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                     limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(null, "No se realizo ninguna edición de registro...");
+                    limpiarCampos();
                 }
             }
         } else {
@@ -487,8 +491,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         String vNomHisto = txtNomHisto.getText();
         String vTratHisto = txtTratHisto.getText();
         int vIdPaci = Integer.parseInt(txtIdPaci.getText());
+        //datosMedi = (Medico) mediData.listarMedi();
+        datosMedico();
         //creo el objecto
-        HistoriaClinica histoClinica = new HistoriaClinica(vFecha, vNomHisto, paciSelec, mediSelec, vTratHisto, vFecha, true);
+        HistoriaClinica histoClinica = new HistoriaClinica(vFecha, vNomHisto, paciSelec, datosMedi, vTratHisto, vFecha, true);
         //llamo al metodo insertarHistoriaClinica
         histoData.insertarHistoClinica(histoClinica);
     }
@@ -523,11 +529,18 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     //metodo cargar combo Medicos
     private void cargarComboMedi() {
-        listarMedi = (ArrayList) mediData.listarMedi();
-        if (listarMedi != null) {
-            for (Medico listar : listarMedi) {
+        listarMedicos = (ArrayList) mediData.listarMedi();
+        if (listarMedicos != null) {
+            for (Medico listar : listarMedicos) {
                 cmbMedicos.addItem(listar);
             }
+        }
+    }
+    
+    private void datosMedico(){
+        listaMedico = (ArrayList) mediData.listarMedi();
+        for(Medico lista: listaMedico){
+            datosMedi = lista;
         }
     }
 
@@ -587,7 +600,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtDniPaci.requestFocus();
         btnCargar.setEnabled(true);
         btnEliminar.setEnabled(false);
-        txtNomHisto.setEnabled(false);
+        txtNomHisto.setEnabled(true);
         jrEditHistoClinica.setSelected(false);
         jrBajasHistoClinica.setSelected(false);
 
