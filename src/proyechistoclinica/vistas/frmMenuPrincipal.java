@@ -42,7 +42,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
-        setPreferredSize(new java.awt.Dimension(900, 700));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
@@ -58,6 +57,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
         jMenu1.setText(" Pacientes");
         jMenu1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jMenu1.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jMenu7.setText("Pacientes");
         jMenu7.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -85,7 +85,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/medicos.png"))); // NOI18N
         jMenu2.setText(" Médicos");
         jMenu2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu2.setPreferredSize(new java.awt.Dimension(95, 30));
+        jMenu2.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jMenuItem5.setText("Formulario");
         jMenuItem5.setPreferredSize(new java.awt.Dimension(80, 25));
@@ -117,6 +117,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/historiaClinica.png"))); // NOI18N
         jMenu4.setText(" Historias Clínicas");
         jMenu4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jMenu4.setPreferredSize(new java.awt.Dimension(140, 30));
 
         jMenuItem6.setText("Mantenimiento");
         jMenuItem6.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -141,6 +142,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/informe.png"))); // NOI18N
         jMenu5.setText(" Informes");
         jMenu5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jMenu5.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jMenuItem3.setText("Informes");
         jMenuItem3.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -156,6 +158,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/recuperar.png"))); // NOI18N
         jMenu6.setText(" Recuperar");
         jMenu6.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jMenu6.setPreferredSize(new java.awt.Dimension(100, 30));
 
         jMenuItem7.setText("Pacientes");
         jMenuItem7.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -166,6 +169,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/salir.png"))); // NOI18N
         jMenu8.setText(" Salir");
         jMenu8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jMenu8.setPreferredSize(new java.awt.Dimension(100, 30));
         jMenu8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu8MouseClicked(evt);
