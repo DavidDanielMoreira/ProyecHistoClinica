@@ -368,6 +368,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
         //metodo bajas pacientes
+        //antes de elimnar el paciente comprueba que no tenga una historia clinica
         String vNomHisto = txtDni.getText();
         histoSelec = (HistoriaClinica) histoData.buscarPoNombre(vNomHisto);
         if (histoSelec != null) {
@@ -522,7 +523,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jdFecha.setCalendar(null);
     }
 
-    //metodo habiltar nuevo Paciente
+    //metodo habilitar para cargar nuevo Paciente
     private void nuevoPaciente() {
         nPaciente = true;
         btnCargar.setEnabled(true);
@@ -532,7 +533,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jrEliminarPaci.setSelected(false);
     }
 
-    //metodo habilitar editar Paciente
+    //metodo habilitar para editar Paciente
     private void editarPaciente() {
         ePaciente = true;
         btnCargar.setEnabled(true);
@@ -542,7 +543,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jrEliminarPaci.setSelected(false);
     }
 
-    //metodo habilitar baja Paciente
+    //metodo habilitar para dar de baja Paciente
     private void bajaPaciente() {
         bPaciente = true;
         btnEliminar.setEnabled(true);
@@ -552,7 +553,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jrEditarPaci.setSelected(false);
     }
 
-    //metodo que busca si el paciente a eliminar posee una historia clinica
+    //metodo eliminar pacientae a traves del id
     private void bajasPaci() {
             int vId = Integer.parseInt(txtId.getText());
             paciData.bajasPaci(vId);     
