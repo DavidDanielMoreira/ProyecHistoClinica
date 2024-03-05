@@ -10,6 +10,9 @@ import javax.swing.JOptionPane;
 public class frmPacientes extends javax.swing.JInternalFrame {
 
     private PacienteData paciData = new PacienteData();
+    private HistoriaClinicaData histoData = new HistoriaClinicaData();
+    private HistoriaClinica histoSelec;
+
     private Paciente paciSelec;
     private LocalDate vFecha;
     private String vTSangre;
@@ -364,18 +367,28 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        if (jrEst.isSelected() && paciSelec != null) {
-            int opcion = JOptionPane.showConfirmDialog(this, "¿Confirma la baja del paciente?" + paciSelec.getDniPaci(), "BAJAS PACIENTES", JOptionPane.OK_CANCEL_OPTION);
-            if (opcion == 0) {
-                bajPaci();
-                limpiarCampos();
-            } else {
-                JOptionPane.showMessageDialog(this, "No se realizo ninguna baja...");
-                limpiarCampos();
-            }
+        //metodo bajas pacientes
+        String vNomHisto = txtDni.getText();
+        histoSelec = (HistoriaClinica) histoData.buscarPoNombre(vNomHisto);
+        if (histoSelec != null) {
+            JOptionPane.showMessageDialog(null, "El paciente que desea eliminar posee una historia clinica tiene que dar de baja la historia clinica");
+            limpiarCampos();
         } else {
-            JOptionPane.showMessageDialog(this, "Faltan datos...");
+            if (jrEst.isSelected() && paciSelec != null) {
+                int opcion = JOptionPane.showConfirmDialog(this, "¿Confirma la baja del paciente?" + paciSelec.getDniPaci(), "BAJAS PACIENTES", JOptionPane.OK_CANCEL_OPTION);
+                if (opcion == 0) {
+                    bajasPaci();
+                    limpiarCampos();
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se realizo ninguna baja...");
+                    limpiarCampos();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Faltan datos...");
+            }
         }
+
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
@@ -458,12 +471,6 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         paciData.insertarPaci(paci);
 
     }
-    //metodo bajas pacientes
-
-    private void bajPaci() {
-        int vId = Integer.parseInt(txtId.getText());
-        paciData.bajasPaci(vId);
-    }
 
     //metodo buscar por DNI
     private void buscPorDni() {
@@ -511,7 +518,8 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jrNuevoPaci.setSelected(false);
         jrEditarPaci.setSelected(false);
         jrEliminarPaci.setSelected(false);
-
+        //resetear jdFecha
+        jdFecha.setCalendar(null);
     }
 
     //metodo habiltar nuevo Paciente
@@ -542,5 +550,11 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         btnCargar.setEnabled(false);
         jrNuevoPaci.setSelected(false);
         jrEditarPaci.setSelected(false);
+    }
+
+    //metodo que busca si el paciente a eliminar posee una historia clinica
+    private void bajasPaci() {
+            int vId = Integer.parseInt(txtId.getText());
+            paciData.bajasPaci(vId);     
     }
 }
