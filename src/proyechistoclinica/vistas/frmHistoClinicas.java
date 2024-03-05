@@ -584,6 +584,9 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtNomHisto.setText("");
         txtTratHisto.setText("");
         txtDniPaci.requestFocus();
+        jrNuevaHisto.setSelected(false);
+        jrEditHistoClinica.setSelected(false);
+        jrBajasHistoClinica.setSelected(false);
     }
 
     //metodo dar de baja Historia clinica a traves del id
