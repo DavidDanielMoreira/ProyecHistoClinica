@@ -371,7 +371,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                 limpiarCampos();
             } else {
                 JOptionPane.showMessageDialog(this, "No se realizo ninguna baja...");
-
+                limpiarCampos();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Faltan datos...");
