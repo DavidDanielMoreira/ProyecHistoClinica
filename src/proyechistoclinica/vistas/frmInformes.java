@@ -117,6 +117,7 @@ public class frmInformes extends javax.swing.JInternalFrame {
                 repoData.listarHistoClinica(vNomHisto);
             }else{
                 JOptionPane.showMessageDialog(null, "No existe datos cargados...");
+                limpiarCampos();
             }
             
         }else{
@@ -142,6 +143,7 @@ public class frmInformes extends javax.swing.JInternalFrame {
         if (jrHistoriasClinicas.isSelected()) {
             btnListadoHisto.setEnabled(true);
             txtNomHisto.setEnabled(true);
+            txtNomHisto.requestFocus();
             
         } else {
             btnListadoHisto.setEnabled(false);
@@ -173,5 +175,6 @@ public class frmInformes extends javax.swing.JInternalFrame {
        
         btnListadoHisto.setEnabled(false);
         txtNomHisto.setText("");
+        txtNomHisto.requestFocus();
     }
 }
