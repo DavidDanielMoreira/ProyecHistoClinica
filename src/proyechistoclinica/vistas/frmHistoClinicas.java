@@ -22,6 +22,9 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private ArrayList<Medico> listarMedicos;
     private ArrayList<Medico> listaMedico;
     private LocalDate vFecha = LocalDate.now(); //fecha actual 
+    private boolean nHistoClinica;
+    private boolean eHistoClinica;
+    private boolean bHistoClinica;
 
     public frmHistoClinicas() {
         initComponents();
@@ -172,6 +175,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         cmbMedicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbMedicosMouseClicked(evt);
+            }
+        });
+        cmbMedicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMedicosActionPerformed(evt);
             }
         });
         jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 180, 25));
@@ -371,7 +379,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void cmbMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbMedicosMouseClicked
         // TODO add your handling code here:
-        mediSelec = (Medico) cmbMedicos.getSelectedItem();
+          mediSelec = (Medico) cmbMedicos.getSelectedItem();
+     
     }//GEN-LAST:event_cmbMedicosMouseClicked
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -395,6 +404,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
         // TODO add your handling code here:
+        frmPacientes fPaci = new frmPacientes();
+        frmMenuPrincipal.escritorio.add(fPaci);
+        fPaci.toFront();
+        fPaci.setVisible(true);
     }//GEN-LAST:event_btnPacientesActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -449,6 +462,12 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
             bajasHistoriaClinica();
         }
     }//GEN-LAST:event_jrBajasHistoClinicaActionPerformed
+
+    private void cmbMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMedicosActionPerformed
+        // TODO add your handling code here:
+      
+         
+    }//GEN-LAST:event_cmbMedicosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -599,7 +618,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void nuevaHistoriaClinica() {
         txtDniPaci.setEnabled(true);
         btnBuscarPaci.setEnabled(true);
-        btnBuscarHisto.setEnabled(false);
+        btnBuscarHisto.setEnabled(true); //habilita el boton para buscar si existe la historia clinica
         txtDniPaci.requestFocus();
         btnCargar.setEnabled(true);
         btnEliminar.setEnabled(false);
