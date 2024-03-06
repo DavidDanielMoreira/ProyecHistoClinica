@@ -156,6 +156,12 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Télefono:");
         jPanelDatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        txtTel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelKeyTyped(evt);
+            }
+        });
         jPanelDatos.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 245, 200, 25));
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -424,6 +430,17 @@ public class frmPacientes extends javax.swing.JInternalFrame {
             bajaPaciente();
         }
     }//GEN-LAST:event_jrEliminarPaciActionPerformed
+
+    private void txtTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+        if(txtTel.getText().length()>=30){
+            JOptionPane.showMessageDialog(null, "Maximo 30 caracteres");
+        }
+    }//GEN-LAST:event_txtTelKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
