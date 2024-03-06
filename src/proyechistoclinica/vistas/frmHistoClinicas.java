@@ -339,7 +339,6 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
-            JOptionPane.showMessageDialog(null, "Ingreso un valor no permitido solamente números...");
             evt.consume();
         }
         if (txtNomHisto.getText().length() >= 8) {
@@ -379,8 +378,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void cmbMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbMedicosMouseClicked
         // TODO add your handling code here:
-          mediSelec = (Medico) cmbMedicos.getSelectedItem();
-     
+        mediSelec = (Medico) cmbMedicos.getSelectedItem();
+
     }//GEN-LAST:event_cmbMedicosMouseClicked
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -395,6 +394,13 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void txtDniPaciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniPaciKeyTyped
         // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+        if(txtDniPaci.getText().length()>=8){
+            JOptionPane.showMessageDialog(null, "Maximo ocho caracteres....");
+        }
 
     }//GEN-LAST:event_txtDniPaciKeyTyped
 
@@ -408,6 +414,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         frmMenuPrincipal.escritorio.add(fPaci);
         fPaci.toFront();
         fPaci.setVisible(true);
+        this.dispose(); //cierra el formulario frmHistoClinicas
     }//GEN-LAST:event_btnPacientesActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -465,8 +472,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void cmbMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMedicosActionPerformed
         // TODO add your handling code here:
-      
-         
+
+
     }//GEN-LAST:event_cmbMedicosActionPerformed
 
 
@@ -535,15 +542,22 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void buscPorDni() {
         String vDni = txtDniPaci.getText();
         paciSelec = paciData.buscarPorDni(vDni);
-        if (paciSelec != null) {
-            txtIdPaci.setText(String.valueOf(paciSelec.getIdPaci()));
-            txtApePaci.setText(paciSelec.getApellidoPaci());
-            txtNomPaci.setText(paciSelec.getNombresPaci());
+        histoSelec = histoData.buscarPoNombre(vDni);
+        if (histoSelec != null) {
+            JOptionPane.showMessageDialog(null, "El paciente ya posee una historia clinica....");
+            limpiarCampos();
         } else {
-            JOptionPane.showMessageDialog(null, "No existe ningún paciente con ese DNI..." + vDni);
-            txtDniPaci.setText("");
-            txtDniPaci.requestFocus();
+            if (paciSelec != null) {
+                txtIdPaci.setText(String.valueOf(paciSelec.getIdPaci()));
+                txtApePaci.setText(paciSelec.getApellidoPaci());
+                txtNomPaci.setText(paciSelec.getNombresPaci());
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe ningún paciente con ese DNI..." + vDni);
+                txtDniPaci.setText("");
+                txtDniPaci.requestFocus();
+            }
         }
+
     }
 
     //metodo cargar combo Medicos
@@ -555,10 +569,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
             }
         }
     }
-    
-    private void datosMedico(){
+
+    private void datosMedico() {
         listaMedico = (ArrayList) mediData.listarMedi();
-        for(Medico lista: listaMedico){
+        for (Medico lista : listaMedico) {
             datosMedi = lista;
         }
     }
