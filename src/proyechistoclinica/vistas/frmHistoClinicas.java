@@ -30,6 +30,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         initComponents();
         formatoFecha();
         cargarComboMedi();
+        txtNomPaci.setEnabled(false);
+        txtApePaci.setEnabled(false);
         txtDniPaci.setEnabled(false);
         txtNomHisto.setEnabled(false);
         txtIdPaci.setVisible(false);
@@ -395,10 +397,10 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void txtDniPaciKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniPaciKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtDniPaci.getText().length()>=8){
+        if (txtDniPaci.getText().length() >= 8) {
             JOptionPane.showMessageDialog(null, "Maximo ocho caracteres....");
         }
 
@@ -448,6 +450,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
     private void jrBajasHistoClinicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrBajasHistoClinicaMouseClicked
         // TODO add your handling code here:
+
 
     }//GEN-LAST:event_jrBajasHistoClinicaMouseClicked
 
@@ -633,12 +636,20 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtDniPaci.setEnabled(true);
         btnBuscarPaci.setEnabled(true);
         btnBuscarHisto.setEnabled(true); //habilita el boton para buscar si existe la historia clinica
-        txtDniPaci.requestFocus();
         btnCargar.setEnabled(true);
         btnEliminar.setEnabled(false);
         txtNomHisto.setEnabled(true);
         jrEditHistoClinica.setSelected(false);
         jrBajasHistoClinica.setSelected(false);
+        txtDniPaci.setText("");
+        txtApePaci.setText("");
+        txtNomPaci.setText("");
+        txtNomHisto.setText("");
+        txtTratHisto.setText("");
+        txtIdPaci.setText("");
+        txtIdHisto.setText("");
+        txtFechaHisto.setText("");
+        txtDniPaci.requestFocus();
 
     }
 
@@ -653,6 +664,15 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtNomHisto.requestFocus();
         jrNuevaHisto.setSelected(false);
         jrBajasHistoClinica.setSelected(false);
+        txtDniPaci.setText("");
+        txtApePaci.setText("");
+        txtNomPaci.setText("");
+        txtNomHisto.setText("");
+        txtTratHisto.setText("");
+        txtIdPaci.setText("");
+        txtIdHisto.setText("");
+        txtFechaHisto.setText("");
+        txtNomHisto.requestFocus();
     }
 
     //metodo habilitar campos para dar de baja Historia clinica
@@ -666,5 +686,16 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         btnCargar.setEnabled(false);
         jrNuevaHisto.setSelected(false);
         jrEditHistoClinica.setSelected(false);
+        txtDniPaci.setText("");
+        txtApePaci.setText("");
+        txtNomPaci.setText("");
+        txtNomHisto.setText("");
+        txtTratHisto.setText("");
+        txtIdPaci.setText("");
+        txtIdHisto.setText("");
+        txtFechaHisto.setText("");
+        txtDniPaci.requestFocus();
+        txtNomHisto.requestFocus();
+
     }
 }
