@@ -558,6 +558,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "No existe ningún paciente con ese DNI..." + vDni);
                 txtDniPaci.setText("");
                 txtDniPaci.requestFocus();
+                limpiarCampos();
             }
         }
 
@@ -599,6 +600,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
             txtNomPaci.setText(histoSelec.getPaciente().getNombresPaci());
         } else {
             JOptionPane.showMessageDialog(null, "No existe ninguna historia clinica con ese nombre.." + vNom);
+            limpiarCampos();
         }
     }
 

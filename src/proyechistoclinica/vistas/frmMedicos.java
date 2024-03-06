@@ -231,20 +231,24 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         // TODO add your handling code here:
-        if (!txtApe.getText().isEmpty() && !txtNom.getText().isEmpty() && vSexo != null) {
+        if (!txtApe.getText().isEmpty() && !txtNom.getText().isEmpty() &&  !txtDni.getText().isEmpty() && vSexo != null && cmbEspec != null) {
             if (mediSelec == null) {
                 int opcion = JOptionPane.showConfirmDialog(this, "¿Confirma el alta del registro?", "ALTAS MEDICOS", JOptionPane.OK_CANCEL_OPTION);
                 if (opcion == 0) {
                     insertMedico();
+                    limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(this, "No se realizo ningúun alta...");
+                    limpiarCampos();
                 }
             } else {
                 int opcion = JOptionPane.showConfirmDialog(this, "¿Confirma la edición del registro?", "EDITAR MEDICOS", JOptionPane.OK_CANCEL_OPTION);
                 if (opcion == 0) {
                     editMedico();
+                    limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(this, "No se realizo ningúna edición de registro...");
+                    limpiarCampos();
                 }
 
             }
@@ -363,6 +367,8 @@ public class frmMedicos extends javax.swing.JInternalFrame {
         txtDom.setText("");
         txtDni.setText("");
         txtTel.setText("");
+        //reinicio el combo sexo
+        cmbSexo.setSelectedIndex(0);
         //reinicio el combo
         cmbEspec.setSelectedIndex(0);
         txtApe.requestFocus();
