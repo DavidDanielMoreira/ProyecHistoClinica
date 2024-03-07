@@ -1,5 +1,7 @@
 package proyechistoclinica.vistas;
 
+import java.awt.Color;
+import java.awt.Font;
 import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
@@ -263,7 +265,11 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         jtPacientes.getColumnModel().getColumn(5).setPreferredWidth(150);
 
         //establecer alto de la cabecera de la tabla
-        jtPacientes.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 30));
+        jtPacientes.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 25));
+        jtPacientes.getTableHeader().setFont(new Font("Arial Narrow",1,16)); //cambiar tipo fuente
+        jtPacientes.getTableHeader().setBackground(Color.green); //color de fondo de la cabecera
+        jtPacientes.getTableHeader().setForeground(Color.BLUE); //color de la letra cabecera
+        
     }
 
     //metodo cargar tabla

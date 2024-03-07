@@ -14,6 +14,8 @@ public class frmInformes extends javax.swing.JInternalFrame {
         this.setSize(400, 300);
         this.setResizable(false);
         this.repaint();
+        btnListadoHisto.setEnabled(false);
+        txtNomHisto.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -176,5 +178,6 @@ public class frmInformes extends javax.swing.JInternalFrame {
         btnListadoHisto.setEnabled(false);
         txtNomHisto.setText("");
         txtNomHisto.requestFocus();
+        btnListadoHisto.setEnabled(true);
     }
 }

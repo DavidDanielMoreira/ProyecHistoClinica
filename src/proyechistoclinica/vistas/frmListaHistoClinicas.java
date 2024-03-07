@@ -3,6 +3,8 @@ package proyechistoclinica.vistas;
 import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -17,6 +19,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
     private Paciente paciSelec;
     private Medico mediSelec;
     private ArrayList<HistoriaClinica> listarHisto;
+    private DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //formato para que se muestre la fecha ej: 12/01/2024
 
     public frmListaHistoClinicas() {
         initComponents();
@@ -192,7 +195,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         listarHisto = (ArrayList) histoData.listarHistoClinicas();
         if (listarHisto != null) {
             for (HistoriaClinica listar : listarHisto) {
-                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist(), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci()});
+                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist().format(forma), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci()});
             }
         }
     }
