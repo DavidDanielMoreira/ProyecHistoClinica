@@ -434,10 +434,10 @@ public class frmPacientes extends javax.swing.JInternalFrame {
     private void txtTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelKeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(!Character.isDigit(c)){
+        if (!Character.isDigit(c)) {
             evt.consume();
         }
-        if(txtTel.getText().length()>=30){
+        if (txtTel.getText().length() >= 30) {
             JOptionPane.showMessageDialog(null, "Maximo 30 caracteres");
         }
     }//GEN-LAST:event_txtTelKeyTyped
@@ -544,35 +544,63 @@ public class frmPacientes extends javax.swing.JInternalFrame {
     private void nuevoPaciente() {
         nPaciente = true;
         btnCargar.setEnabled(true);
-        txtApe.requestFocus();
         btnEliminar.setEnabled(false);
         jrEditarPaci.setSelected(false);
         jrEliminarPaci.setSelected(false);
+        txtId.setText("");
+        txtApe.setText("");
+        txtNom.setText("");
+        txtDni.setText("");
+        txtDom.setText("");
+        txtTel.setText("");
+        cmbTipoSangre.setSelectedIndex(0);
+        cmbSexo.setSelectedIndex(0);
+        jdFecha.setCalendar(null);
+        txtApe.requestFocus();
+
     }
 
     //metodo habilitar para editar Paciente
     private void editarPaciente() {
         ePaciente = true;
         btnCargar.setEnabled(true);
-        txtDni.requestFocus();
         btnEliminar.setEnabled(false);
         jrNuevoPaci.setSelected(false);
         jrEliminarPaci.setSelected(false);
+        txtId.setText("");
+        txtApe.setText("");
+        txtNom.setText("");
+        txtDom.setText("");
+        txtDni.setText("");
+        txtTel.setText("");
+        cmbTipoSangre.setSelectedIndex(0);
+        cmbSexo.setSelectedIndex(0);
+        jdFecha.setCalendar(null);
+        txtDni.requestFocus();
     }
 
     //metodo habilitar para dar de baja Paciente
     private void bajaPaciente() {
         bPaciente = true;
         btnEliminar.setEnabled(true);
-        txtDni.requestFocus();
         btnCargar.setEnabled(false);
         jrNuevoPaci.setSelected(false);
         jrEditarPaci.setSelected(false);
+        txtId.setText("");
+        txtApe.setText("");
+        txtNom.setText("");
+        txtDom.setText("");
+        txtDni.setText("");
+        txtTel.setText("");
+        cmbTipoSangre.setSelectedIndex(0);
+        cmbSexo.setSelectedIndex(0);
+        jdFecha.setCalendar(null);
+        txtDni.requestFocus();
     }
 
     //metodo eliminar pacientae a traves del id
     private void bajasPaci() {
-            int vId = Integer.parseInt(txtId.getText());
-            paciData.bajasPaci(vId);     
+        int vId = Integer.parseInt(txtId.getText());
+        paciData.bajasPaci(vId);
     }
 }
