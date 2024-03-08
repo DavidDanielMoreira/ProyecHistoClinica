@@ -38,6 +38,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,7 +163,15 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuItem7.setText("Pacientes");
         jMenuItem7.setPreferredSize(new java.awt.Dimension(95, 25));
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem7);
+
+        jMenuItem9.setText("Historia Clinica");
+        jMenu6.add(jMenuItem9);
 
         jMenuBar1.add(jMenu6);
 
@@ -272,6 +281,16 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         escritorio.moveToFront(fLisHisto);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        frmListaBajasPacientes fBajPaci = new frmListaBajasPacientes();
+        fBajPaci.setVisible(true);
+        escritorio.add(fBajPaci);
+        escritorio.moveToFront(fBajPaci);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -324,5 +343,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
