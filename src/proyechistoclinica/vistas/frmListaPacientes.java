@@ -102,8 +102,11 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
 
         jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 600, 180));
 
-        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
-        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
+        btnCerrar.setBackground(new java.awt.Color(16, 41, 153));
+        btnCerrar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerraMarron.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);

@@ -46,6 +46,7 @@ public class frmListaBajasPacientes extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
 
         setClosable(true);
+        setPreferredSize(new java.awt.Dimension(700, 450));
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,24 +107,33 @@ public class frmListaBajasPacientes extends javax.swing.JInternalFrame {
 
         jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 600, 170));
 
-        jButton1.setBackground(new java.awt.Color(240, 240, 240));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
+        jButton1.setBackground(new java.awt.Color(16, 41, 153));
+        jButton1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerraMarron.png"))); // NOI18N
+        jButton1.setText("Cerrar");
+        jButton1.setToolTipText("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 100, -1));
+        jPanelDatos.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 110, 40));
 
-        jButton2.setBackground(new java.awt.Color(240, 240, 240));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevo.png"))); // NOI18N
-        jPanelDatos.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 100, -1));
+        jButton2.setBackground(new java.awt.Color(16, 41, 153));
+        jButton2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevMarron.png"))); // NOI18N
+        jButton2.setText("Nuevo");
+        jPanelDatos.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 40));
 
-        jButton3.setBackground(new java.awt.Color(240, 240, 240));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/guardar.png"))); // NOI18N
-        jPanelDatos.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 100, -1));
+        jButton3.setBackground(new java.awt.Color(16, 41, 153));
+        jButton3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/disquMarron.png"))); // NOI18N
+        jButton3.setText("Guardar");
+        jPanelDatos.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 110, 40));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 640, 340));
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 640, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

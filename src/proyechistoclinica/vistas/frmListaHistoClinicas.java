@@ -50,9 +50,10 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jPanelDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el nombre:");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
         txtNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -67,7 +68,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 400, 25));
+        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 310, 25));
 
         jtHistoClinicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,14 +105,17 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
 
         jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 570, 160));
 
-        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
-        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
+        btnCerrar.setBackground(new java.awt.Color(16, 41, 153));
+        btnCerrar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerraMarron.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 400, -1));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 310, 40));
 
         jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 620, 310));
 
