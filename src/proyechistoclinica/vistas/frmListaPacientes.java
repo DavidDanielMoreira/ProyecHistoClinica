@@ -56,6 +56,9 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
         jLabel1.setText("Ingrese el Dni:");
         jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
+        txtDni.setBackground(new java.awt.Color(99, 99, 99));
+        txtDni.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtDni.setForeground(new java.awt.Color(255, 255, 255));
         txtDni.setEnabled(false);
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -65,7 +68,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 txtDniKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 250, 25));
+        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 65, 250, 25));
 
         jtPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,17 +115,24 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 330, 540, -1));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 350, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total de pacientes activos:");
         jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
+
+        txtTotal.setBackground(new java.awt.Color(255, 255, 255));
+        txtTotal.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        txtTotal.setForeground(new java.awt.Color(0, 0, 255));
         jPanelDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 295, 60, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ingrese el apellido:");
         jPanelDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
+        txtApe.setBackground(new java.awt.Color(99, 99, 99));
+        txtApe.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtApe.setForeground(new java.awt.Color(255, 255, 255));
         txtApe.setEnabled(false);
         txtApe.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -132,7 +142,7 @@ public class frmListaPacientes extends javax.swing.JInternalFrame {
                 txtApeKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 250, 25));
+        jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 65, 250, 25));
 
         jrDni.setBackground(new java.awt.Color(0, 51, 51));
         jrDni.setForeground(new java.awt.Color(255, 255, 255));

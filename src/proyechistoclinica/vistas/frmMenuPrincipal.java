@@ -7,7 +7,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     
     public frmMenuPrincipal() {
         initComponents();
-        this.setSize(930,600);  //tamaño fijo
+        this.setSize(900,700);  //tamaño fijo
         this.setResizable(false);   //usuario no puede modificar el tamaño 
         this.setLocationRelativeTo(null); //centrado
         this.repaint();  //aplica los cambios

@@ -55,6 +55,9 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jLabel1.setText("Ingrese el nombre:");
         jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
+        txtNom.setBackground(new java.awt.Color(99, 99, 99));
+        txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtNom.setForeground(new java.awt.Color(255, 255, 255));
         txtNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 txtNomMouseReleased(evt);
@@ -68,7 +71,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 310, 25));
+        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 35, 310, 25));
 
         jtHistoClinicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

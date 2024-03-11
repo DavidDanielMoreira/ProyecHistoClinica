@@ -86,7 +86,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Historia Clinicas");
-        setPreferredSize(new java.awt.Dimension(650, 530));
+        setPreferredSize(new java.awt.Dimension(700, 530));
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,60 +99,77 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jLabel1.setText("Ingrese el DNI:");
         jPanelPaci.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        txtDniPaci.setBackground(new java.awt.Color(99, 99, 99));
+        txtDniPaci.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
+        txtDniPaci.setForeground(new java.awt.Color(255, 255, 255));
         txtDniPaci.setEnabled(false);
         txtDniPaci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDniPaciKeyTyped(evt);
             }
         });
-        jPanelPaci.add(txtDniPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 25));
+        jPanelPaci.add(txtDniPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 25, 200, 25));
 
         jlFecha.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
-        jlFecha.setForeground(new java.awt.Color(0, 0, 255));
+        jlFecha.setForeground(new java.awt.Color(255, 255, 255));
         jlFecha.setText("jLabel2");
-        jPanelPaci.add(jlFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 100, 30));
+        jPanelPaci.add(jlFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 100, 30));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Apellido:");
         jPanelPaci.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtApePaci.setEditable(false);
+        txtApePaci.setBackground(new java.awt.Color(99, 99, 99));
+        txtApePaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtApePaci.setForeground(new java.awt.Color(255, 255, 255));
         txtApePaci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApePaciKeyTyped(evt);
             }
         });
-        jPanelPaci.add(txtApePaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 25));
+        jPanelPaci.add(txtApePaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 75, 280, 25));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombres:");
-        jPanelPaci.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        jPanelPaci.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
 
         txtNomPaci.setEditable(false);
-        jPanelPaci.add(txtNomPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 200, 25));
+        txtNomPaci.setBackground(new java.awt.Color(99, 99, 99));
+        txtNomPaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtNomPaci.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelPaci.add(txtNomPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 75, 280, 25));
 
-        btnBuscarPaci.setBackground(new java.awt.Color(240, 240, 240));
-        btnBuscarPaci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/buscar.png"))); // NOI18N
+        btnBuscarPaci.setBackground(new java.awt.Color(16, 41, 156));
+        btnBuscarPaci.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnBuscarPaci.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarPaci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/lupaColor.png"))); // NOI18N
+        btnBuscarPaci.setText("Buscar");
         btnBuscarPaci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarPaciActionPerformed(evt);
             }
         });
-        jPanelPaci.add(btnBuscarPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, -1));
+        jPanelPaci.add(btnBuscarPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 130, 40));
 
-        btnPacientes.setBackground(new java.awt.Color(240, 240, 240));
-        btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
+        btnPacientes.setBackground(new java.awt.Color(16, 41, 153));
+        btnPacientes.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/gUsuaMarron.png"))); // NOI18N
+        btnPacientes.setText("Pacientes");
         btnPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPacientesActionPerformed(evt);
             }
         });
-        jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 100, -1));
+        jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 130, -1));
 
         txtIdPaci.setEditable(false);
-        jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 30, 25));
+        txtIdPaci.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
+        txtIdPaci.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 75, 30, 25));
 
-        jPanelFondo.add(jPanelPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 580, 120));
+        jPanelFondo.add(jPanelPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 650, 120));
 
         jPanelHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
         jPanelHistoClinica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -162,6 +179,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jLabel4.setText("Nombre:");
         jPanelHistoClinica.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        txtNomHisto.setBackground(new java.awt.Color(99, 99, 99));
+        txtNomHisto.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
         txtNomHisto.setEnabled(false);
         txtNomHisto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -172,8 +191,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Profesional:");
-        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+        jPanelHistoClinica.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
+        cmbMedicos.setBackground(new java.awt.Color(99, 99, 99));
+        cmbMedicos.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        cmbMedicos.setForeground(new java.awt.Color(0, 0, 0));
         cmbMedicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbMedicosMouseClicked(evt);
@@ -184,63 +206,80 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 cmbMedicosActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 180, 25));
+        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 180, 25));
 
-        btnBuscarHisto.setBackground(new java.awt.Color(240, 240, 240));
-        btnBuscarHisto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/buscar.png"))); // NOI18N
+        btnBuscarHisto.setBackground(new java.awt.Color(16, 41, 156));
+        btnBuscarHisto.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnBuscarHisto.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarHisto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/lupaColor.png"))); // NOI18N
+        btnBuscarHisto.setText("Buscar");
         btnBuscarHisto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarHistoActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnBuscarHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, -1));
+        jPanelHistoClinica.add(btnBuscarHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 40));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tratamiento:");
         jPanelHistoClinica.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
+        txtTratHisto.setBackground(new java.awt.Color(255, 255, 255));
         txtTratHisto.setColumns(20);
         txtTratHisto.setFont(new java.awt.Font("Arial Narrow", 1, 13)); // NOI18N
+        txtTratHisto.setForeground(new java.awt.Color(0, 0, 0));
         txtTratHisto.setRows(5);
         jScrollPane1.setViewportView(txtTratHisto);
 
-        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 530, 120));
+        jPanelHistoClinica.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 600, 120));
 
-        btnNuevo.setBackground(new java.awt.Color(240, 240, 240));
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevo.png"))); // NOI18N
+        btnNuevo.setBackground(new java.awt.Color(16, 41, 156));
+        btnNuevo.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnNuevo.setForeground(new java.awt.Color(255, 255, 255));
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/nuevMarron.png"))); // NOI18N
+        btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 100, -1));
+        jPanelHistoClinica.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 110, 40));
 
-        btnCargar.setBackground(new java.awt.Color(240, 240, 240));
-        btnCargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/guardar.png"))); // NOI18N
+        btnCargar.setBackground(new java.awt.Color(16, 41, 156));
+        btnCargar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnCargar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/disquMarron.png"))); // NOI18N
+        btnCargar.setText("Guardar");
         btnCargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 100, -1));
+        jPanelHistoClinica.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 110, 40));
 
-        btnEliminar.setBackground(new java.awt.Color(240, 240, 240));
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/eliminar.png"))); // NOI18N
+        btnEliminar.setBackground(new java.awt.Color(16, 41, 156));
+        btnEliminar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/elimiMarron.png"))); // NOI18N
+        btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 100, -1));
+        jPanelHistoClinica.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 110, 40));
 
-        btnCerrar.setBackground(new java.awt.Color(240, 240, 240));
-        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar.png"))); // NOI18N
+        btnCerrar.setBackground(new java.awt.Color(16, 41, 156));
+        btnCerrar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerraMarron.png"))); // NOI18N
+        btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 100, -1));
+        jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 110, 40));
         jPanelHistoClinica.add(txtIdHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 5, 40, 20));
         jPanelHistoClinica.add(txtFechaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 5, 70, 20));
 
@@ -248,9 +287,9 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Estado");
-        jPanelHistoClinica.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, -1, -1));
+        jPanelHistoClinica.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, -1, -1));
 
-        jPanelFondo.add(jPanelHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 580, 270));
+        jPanelFondo.add(jPanelHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 650, 270));
 
         jpOpcion.setBackground(new java.awt.Color(0, 51, 51));
         jpOpcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -269,7 +308,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 jrNuevaHistoActionPerformed(evt);
             }
         });
-        jpOpcion.add(jrNuevaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        jpOpcion.add(jrNuevaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         jrEditHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
         jrEditHistoClinica.setForeground(new java.awt.Color(255, 255, 255));
@@ -284,7 +323,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 jrEditHistoClinicaActionPerformed(evt);
             }
         });
-        jpOpcion.add(jrEditHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        jpOpcion.add(jrEditHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
 
         jrBajasHistoClinica.setBackground(new java.awt.Color(0, 51, 51));
         jrBajasHistoClinica.setForeground(new java.awt.Color(255, 255, 255));
@@ -299,15 +338,15 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 jrBajasHistoClinicaActionPerformed(evt);
             }
         });
-        jpOpcion.add(jrBajasHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        jpOpcion.add(jrBajasHistoClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
 
-        jPanelFondo.add(jpOpcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 580, 60));
+        jPanelFondo.add(jpOpcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 650, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,6 +680,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         btnCargar.setEnabled(true);
         btnEliminar.setEnabled(false);
         txtNomHisto.setEnabled(true);
+        btnBuscarHisto.setEnabled(false);
         jrEditHistoClinica.setSelected(false);
         jrBajasHistoClinica.setSelected(false);
         txtDniPaci.setText("");

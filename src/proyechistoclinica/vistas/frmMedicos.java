@@ -62,6 +62,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
         setTitle("Médicos");
 
         jPanelFondo.setBackground(new java.awt.Color(0, 51, 51));
+        jPanelFondo.setPreferredSize(new java.awt.Dimension(580, 380));
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelDatos.setBackground(new java.awt.Color(0, 51, 51));
@@ -72,31 +73,46 @@ public class frmMedicos extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Apellido:");
         jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 35, -1, -1));
+
+        txtApe.setBackground(new java.awt.Color(99, 99, 99));
+        txtApe.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtApe.setForeground(new java.awt.Color(255, 255, 255));
         jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 200, 25));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombres:");
         jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 35, -1, -1));
+
+        txtNom.setBackground(new java.awt.Color(99, 99, 99));
+        txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtNom.setForeground(new java.awt.Color(255, 255, 255));
         jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 200, 25));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Domicilio:");
         jPanelDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        txtDom.setBackground(new java.awt.Color(99, 99, 99));
+        txtDom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtDom.setForeground(new java.awt.Color(255, 255, 255));
         jPanelDatos.add(txtDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 95, 410, 25));
 
-        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DNI:");
         jPanelDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 125, -1, -1));
 
+        txtDni.setBackground(new java.awt.Color(99, 99, 99));
+        txtDni.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtDni.setForeground(new java.awt.Color(255, 255, 255));
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDniKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 145, 200, 25));
+        jPanelDatos.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 200, 25));
 
         btnBuscar.setBackground(new java.awt.Color(16, 41, 153));
         btnBuscar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -107,57 +123,72 @@ public class frmMedicos extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 200, 40));
+        jPanelDatos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 135, 200, 40));
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Sexo:");
-        jPanelDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanelDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
+        cmbSexo.setBackground(new java.awt.Color(99, 99, 99));
+        cmbSexo.setEditable(true);
+        cmbSexo.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        cmbSexo.setForeground(new java.awt.Color(255, 255, 255));
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
         cmbSexo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbSexoMouseClicked(evt);
             }
         });
-        jPanelDatos.add(cmbSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 205, 70, 25));
+        jPanelDatos.add(cmbSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 195, 70, 25));
 
         jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Fecha Nacimiento:");
-        jPanelDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        jPanelDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
 
+        jdFecha.setBackground(new java.awt.Color(99, 99, 99));
+        jdFecha.setForeground(new java.awt.Color(255, 255, 255));
+        jdFecha.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
         jdFecha.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jdFechaPropertyChange(evt);
             }
         });
-        jPanelDatos.add(jdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 205, 150, 25));
+        jPanelDatos.add(jdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 195, 150, 25));
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Télefono:");
-        jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
-        jPanelDatos.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 205, 170, 25));
+        jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+
+        txtTel.setBackground(new java.awt.Color(99, 99, 99));
+        txtTel.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtTel.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelDatos.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 195, 170, 25));
 
         jLabel8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Especialidad:");
-        jPanelDatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanelDatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
+        cmbEspec.setBackground(new java.awt.Color(99, 99, 99));
+        cmbEspec.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        cmbEspec.setForeground(new java.awt.Color(255, 255, 255));
         cmbEspec.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbEspecMouseClicked(evt);
             }
         });
-        jPanelDatos.add(cmbEspec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 255, 230, 25));
+        jPanelDatos.add(cmbEspec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 245, 230, 25));
 
+        jLabel9.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Estado:");
-        jPanelDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        jPanelDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
         jrEst.setSelected(true);
-        jPanelDatos.add(jrEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 255, -1, 25));
+        jPanelDatos.add(jrEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 245, -1, 25));
 
         btnNuevo.setBackground(new java.awt.Color(16, 41, 153));
         btnNuevo.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -169,7 +200,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 110, 40));
+        jPanelDatos.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 110, 40));
 
         btnCargar.setBackground(new java.awt.Color(16, 41, 153));
         btnCargar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -181,14 +212,14 @@ public class frmMedicos extends javax.swing.JInternalFrame {
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 110, 40));
+        jPanelDatos.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 110, 40));
 
         btnEliminar.setBackground(new java.awt.Color(16, 41, 153));
         btnEliminar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/elimiMarron.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
-        jPanelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 110, 40));
+        jPanelDatos.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 110, 40));
 
         btnCerrar.setBackground(new java.awt.Color(16, 41, 153));
         btnCerrar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -200,10 +231,14 @@ public class frmMedicos extends javax.swing.JInternalFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 100, 40));
-        jPanelDatos.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 255, 40, 25));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 100, 40));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 530, 370));
+        txtId.setBackground(new java.awt.Color(99, 99, 99));
+        txtId.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtId.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelDatos.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 245, 40, 25));
+
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 520, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
