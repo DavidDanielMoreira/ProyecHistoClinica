@@ -100,8 +100,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jPanelPaci.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         txtDniPaci.setBackground(new java.awt.Color(99, 99, 99));
-        txtDniPaci.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
-        txtDniPaci.setForeground(new java.awt.Color(255, 255, 255));
+        txtDniPaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtDniPaci.setForeground(new java.awt.Color(0, 0, 0));
         txtDniPaci.setEnabled(false);
         txtDniPaci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -122,7 +122,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtApePaci.setEditable(false);
         txtApePaci.setBackground(new java.awt.Color(99, 99, 99));
         txtApePaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtApePaci.setForeground(new java.awt.Color(255, 255, 255));
+        txtApePaci.setForeground(new java.awt.Color(0, 0, 0));
         txtApePaci.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApePaciKeyTyped(evt);
@@ -137,7 +137,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtNomPaci.setEditable(false);
         txtNomPaci.setBackground(new java.awt.Color(99, 99, 99));
         txtNomPaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtNomPaci.setForeground(new java.awt.Color(255, 255, 255));
+        txtNomPaci.setForeground(new java.awt.Color(0, 0, 0));
         jPanelPaci.add(txtNomPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 75, 280, 25));
 
         btnBuscarPaci.setBackground(new java.awt.Color(16, 41, 156));
@@ -165,8 +165,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         jPanelPaci.add(btnPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 130, -1));
 
         txtIdPaci.setEditable(false);
-        txtIdPaci.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
-        txtIdPaci.setForeground(new java.awt.Color(255, 255, 255));
+        txtIdPaci.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtIdPaci.setForeground(new java.awt.Color(0, 0, 0));
         jPanelPaci.add(txtIdPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 75, 30, 25));
 
         jPanelFondo.add(jPanelPaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 650, 120));
@@ -181,6 +181,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
 
         txtNomHisto.setBackground(new java.awt.Color(99, 99, 99));
         txtNomHisto.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtNomHisto.setForeground(new java.awt.Color(0, 0, 0));
         txtNomHisto.setEnabled(false);
         txtNomHisto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -593,6 +594,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 txtIdPaci.setText(String.valueOf(paciSelec.getIdPaci()));
                 txtApePaci.setText(paciSelec.getApellidoPaci());
                 txtNomPaci.setText(paciSelec.getNombresPaci());
+                txtNomHisto.setText(paciSelec.getDniPaci());
             } else {
                 JOptionPane.showMessageDialog(null, "No existe ningún paciente con ese DNI..." + vDni);
                 txtDniPaci.setText("");
@@ -736,7 +738,6 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
         txtIdPaci.setText("");
         txtIdHisto.setText("");
         txtFechaHisto.setText("");
-        txtDniPaci.requestFocus();
         txtNomHisto.requestFocus();
 
     }

@@ -83,8 +83,8 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         txtApe.setBackground(new java.awt.Color(99, 99, 99));
-        txtApe.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
-        txtApe.setForeground(new java.awt.Color(255, 255, 255));
+        txtApe.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtApe.setForeground(new java.awt.Color(0, 0, 0));
         txtApe.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApeKeyTyped(evt);
@@ -99,7 +99,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         txtNom.setBackground(new java.awt.Color(99, 99, 99));
         txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtNom.setForeground(new java.awt.Color(255, 255, 255));
+        txtNom.setForeground(new java.awt.Color(0, 0, 0));
         txtNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNomKeyTyped(evt);
@@ -114,7 +114,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         txtDom.setBackground(new java.awt.Color(99, 99, 99));
         txtDom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtDom.setForeground(new java.awt.Color(255, 255, 255));
+        txtDom.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 85, 430, 25));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -124,7 +124,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         txtDni.setBackground(new java.awt.Color(99, 99, 99));
         txtDni.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtDni.setForeground(new java.awt.Color(255, 255, 255));
+        txtDni.setForeground(new java.awt.Color(0, 0, 0));
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDniKeyReleased(evt);
@@ -142,7 +142,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         cmbTipoSangre.setBackground(new java.awt.Color(99, 99, 99));
         cmbTipoSangre.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        cmbTipoSangre.setForeground(new java.awt.Color(255, 255, 255));
+        cmbTipoSangre.setForeground(new java.awt.Color(0, 0, 0));
         cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A+", "A-", "B+", "B-", "AB+", "AB-", "0+", "0-" }));
         cmbTipoSangre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,7 +158,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         cmbSexo.setBackground(new java.awt.Color(99, 99, 99));
         cmbSexo.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        cmbSexo.setForeground(new java.awt.Color(255, 255, 255));
+        cmbSexo.setForeground(new java.awt.Color(0, 0, 0));
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
         cmbSexo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -188,7 +188,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
 
         txtTel.setBackground(new java.awt.Color(99, 99, 99));
         txtTel.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtTel.setForeground(new java.awt.Color(255, 255, 255));
+        txtTel.setForeground(new java.awt.Color(0, 0, 0));
         txtTel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelKeyTyped(evt);
@@ -263,6 +263,9 @@ public class frmPacientes extends javax.swing.JInternalFrame {
             }
         });
         jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 110, 40));
+
+        txtId.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+        txtId.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 245, 30, 25));
 
         jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 550, 350));
@@ -380,7 +383,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                     limpiarCampos();
                 }
             }
-            if (paciSelec != null && ePaciente == true) {
+            if (paciSelec != null && ePaciente == true && vFecha!=null) {
                 int opcion = JOptionPane.showConfirmDialog(null, "¿Confirma la edición del registro?", "EDITAR REGISTRO", JOptionPane.OK_CANCEL_OPTION);
                 if (opcion == 0) {
                     editPaci();
@@ -389,6 +392,8 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
                     limpiarCampos();
                 }
+            }else{
+                 JOptionPane.showMessageDialog(null, "No se realizo ninguna acción conrole si los datos son correctos o hay faltante....");
             }
             if (paciSelec != null && nPaciente == true) {
                 JOptionPane.showMessageDialog(null, "El Dni se encuentra cargado y pertence a " + paciSelec.getApellidoPaci() + " - " + paciSelec.getNombresPaci());

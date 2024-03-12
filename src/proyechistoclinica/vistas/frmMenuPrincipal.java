@@ -52,13 +52,15 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGap(0, 648, Short.MAX_VALUE)
         );
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/usuarios-alt.png"))); // NOI18N
+        jMenu1.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/gente.png"))); // NOI18N
         jMenu1.setText(" Pacientes");
         jMenu1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu1.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenu1.setPreferredSize(new java.awt.Dimension(110, 50));
 
         jMenu7.setText("Pacientes");
         jMenu7.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -83,10 +85,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/medicos.png"))); // NOI18N
+        jMenu2.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/doctor.png"))); // NOI18N
         jMenu2.setText(" Médicos");
         jMenu2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu2.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenu2.setPreferredSize(new java.awt.Dimension(110, 50));
 
         jMenuItem5.setText("Formulario");
         jMenuItem5.setPreferredSize(new java.awt.Dimension(80, 25));
@@ -99,10 +103,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/especialidad.png"))); // NOI18N
+        jMenu3.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu3.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/certificado.png"))); // NOI18N
         jMenu3.setText(" Especialidades");
         jMenu3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu3.setPreferredSize(new java.awt.Dimension(130, 35));
+        jMenu3.setPreferredSize(new java.awt.Dimension(140, 50));
 
         jMenuItem4.setText("Formulario");
         jMenuItem4.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -115,10 +121,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/historiaClinica.png"))); // NOI18N
+        jMenu4.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/receta.png"))); // NOI18N
         jMenu4.setText(" Historias Clínicas");
         jMenu4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu4.setPreferredSize(new java.awt.Dimension(140, 30));
+        jMenu4.setPreferredSize(new java.awt.Dimension(150, 30));
 
         jMenuItem6.setText("Mantenimiento");
         jMenuItem6.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -140,10 +148,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/informe.png"))); // NOI18N
+        jMenu5.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu5.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/papel.png"))); // NOI18N
         jMenu5.setText(" Informes");
         jMenu5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu5.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenu5.setPreferredSize(new java.awt.Dimension(110, 50));
 
         jMenuItem3.setText("Informes");
         jMenuItem3.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -156,10 +166,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/recuperar.png"))); // NOI18N
+        jMenu6.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu6.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/enviar.png"))); // NOI18N
         jMenu6.setText(" Recuperar");
         jMenu6.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu6.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenu6.setPreferredSize(new java.awt.Dimension(160, 50));
 
         jMenuItem7.setText("Pacientes");
         jMenuItem7.setPreferredSize(new java.awt.Dimension(95, 25));
@@ -175,10 +187,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu6);
 
-        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/salir.png"))); // NOI18N
+        jMenu8.setBackground(new java.awt.Color(240, 240, 240));
+        jMenu8.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyechistoclinica/imagen/cerrar-sesion.png"))); // NOI18N
         jMenu8.setText(" Salir");
         jMenu8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jMenu8.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenu8.setPreferredSize(new java.awt.Dimension(100, 50));
         jMenu8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu8MouseClicked(evt);

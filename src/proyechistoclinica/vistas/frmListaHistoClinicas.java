@@ -1,5 +1,7 @@
 package proyechistoclinica.vistas;
 
+import java.awt.Color;
+import java.awt.Font;
 import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
 import java.sql.*;
@@ -194,7 +196,11 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jtHistoClinicas.getColumnModel().getColumn(4).setPreferredWidth(80);
         
         //establecer alto de columnas
-        jtHistoClinicas.getTableHeader().setPreferredSize(new java.awt.Dimension(0,30));
+        jtHistoClinicas.getTableHeader().setPreferredSize(new java.awt.Dimension(0,25));
+        
+        jtHistoClinicas.getTableHeader().setFont(new Font("Arial Narrow",1,16)); //cambiar tipo fuente
+        jtHistoClinicas.getTableHeader().setBackground(Color.green); //color de fondo de la cabecera
+        jtHistoClinicas.getTableHeader().setForeground(Color.BLUE); //color de la letra cabecera
     }
 
     //metodo cargar tabla

@@ -76,7 +76,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtApe.setBackground(new java.awt.Color(99, 99, 99));
         txtApe.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtApe.setForeground(new java.awt.Color(255, 255, 255));
+        txtApe.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 200, 25));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -86,7 +86,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtNom.setBackground(new java.awt.Color(99, 99, 99));
         txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtNom.setForeground(new java.awt.Color(255, 255, 255));
+        txtNom.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 200, 25));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -96,7 +96,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtDom.setBackground(new java.awt.Color(99, 99, 99));
         txtDom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtDom.setForeground(new java.awt.Color(255, 255, 255));
+        txtDom.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 95, 410, 25));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -106,7 +106,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtDni.setBackground(new java.awt.Color(99, 99, 99));
         txtDni.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtDni.setForeground(new java.awt.Color(255, 255, 255));
+        txtDni.setForeground(new java.awt.Color(0, 0, 0));
         txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDniKeyTyped(evt);
@@ -133,7 +133,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
         cmbSexo.setBackground(new java.awt.Color(99, 99, 99));
         cmbSexo.setEditable(true);
         cmbSexo.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        cmbSexo.setForeground(new java.awt.Color(255, 255, 255));
+        cmbSexo.setForeground(new java.awt.Color(0, 0, 0));
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
         cmbSexo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -164,7 +164,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtTel.setBackground(new java.awt.Color(99, 99, 99));
         txtTel.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtTel.setForeground(new java.awt.Color(255, 255, 255));
+        txtTel.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 195, 170, 25));
 
         jLabel8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -174,7 +174,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         cmbEspec.setBackground(new java.awt.Color(99, 99, 99));
         cmbEspec.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        cmbEspec.setForeground(new java.awt.Color(255, 255, 255));
+        cmbEspec.setForeground(new java.awt.Color(0, 0, 0));
         cmbEspec.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbEspecMouseClicked(evt);
@@ -235,7 +235,7 @@ public class frmMedicos extends javax.swing.JInternalFrame {
 
         txtId.setBackground(new java.awt.Color(99, 99, 99));
         txtId.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        txtId.setForeground(new java.awt.Color(255, 255, 255));
+        txtId.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDatos.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 245, 40, 25));
 
         jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 520, 370));
