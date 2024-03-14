@@ -188,7 +188,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomHistoKeyTyped(evt);
             }
         });
-        jPanelHistoClinica.add(txtNomHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 25));
+        jPanelHistoClinica.add(txtNomHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 25, 200, 25));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Profesional:");
@@ -207,7 +207,7 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
                 cmbMedicosActionPerformed(evt);
             }
         });
-        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 180, 25));
+        jPanelHistoClinica.add(cmbMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 25, 180, 25));
 
         btnBuscarHisto.setBackground(new java.awt.Color(16, 41, 156));
         btnBuscarHisto.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -281,8 +281,8 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
             }
         });
         jPanelHistoClinica.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 110, 40));
-        jPanelHistoClinica.add(txtIdHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 5, 40, 20));
-        jPanelHistoClinica.add(txtFechaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 5, 70, 20));
+        jPanelHistoClinica.add(txtIdHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 40, 20));
+        jPanelHistoClinica.add(txtFechaHisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 70, 20));
 
         jRadioButton1.setBackground(new java.awt.Color(0, 51, 51));
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
