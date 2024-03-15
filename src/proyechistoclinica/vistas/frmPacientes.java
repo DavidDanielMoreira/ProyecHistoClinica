@@ -95,7 +95,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombres:");
-        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
+        jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         txtNom.setBackground(new java.awt.Color(99, 99, 99));
         txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
@@ -105,7 +105,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                 txtNomKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 35, 200, 25));
+        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 35, 200, 25));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,7 +115,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         txtDom.setBackground(new java.awt.Color(99, 99, 99));
         txtDom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
         txtDom.setForeground(new java.awt.Color(0, 0, 0));
-        jPanelDatos.add(txtDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 85, 430, 25));
+        jPanelDatos.add(txtDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 85, 410, 25));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,7 +170,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Fecha Nacimiento:");
-        jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
 
         jdFecha.setBackground(new java.awt.Color(99, 99, 99));
         jdFecha.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,7 +179,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                 jdFechaPropertyChange(evt);
             }
         });
-        jPanelDatos.add(jdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 195, 200, -1));
+        jPanelDatos.add(jdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 195, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,7 +214,7 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 200, -1));
+        jPanelDatos.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 200, -1));
 
         btnNuevo.setBackground(new java.awt.Color(16, 41, 153));
         btnNuevo.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
