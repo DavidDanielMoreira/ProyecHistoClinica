@@ -55,7 +55,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el nombre:");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         txtNom.setBackground(new java.awt.Color(99, 99, 99));
         txtNom.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
@@ -73,17 +73,17 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 txtNomKeyTyped(evt);
             }
         });
-        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 35, 310, 25));
+        jPanelDatos.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 310, 25));
 
         jtHistoClinicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Fecha", "Nombre", "Apellido", "Nombres", "DNI"
+                "id", "Fecha", "Nombre", "Apellido", "Nombres", "DNI", "Ultima Visita"
             }
         ));
         jScrollPane1.setViewportView(jtHistoClinicas);
@@ -106,9 +106,12 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
             jtHistoClinicas.getColumnModel().getColumn(5).setMinWidth(80);
             jtHistoClinicas.getColumnModel().getColumn(5).setPreferredWidth(80);
             jtHistoClinicas.getColumnModel().getColumn(5).setMaxWidth(80);
+            jtHistoClinicas.getColumnModel().getColumn(6).setMinWidth(60);
+            jtHistoClinicas.getColumnModel().getColumn(6).setPreferredWidth(60);
+            jtHistoClinicas.getColumnModel().getColumn(6).setMaxWidth(60);
         }
 
-        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 570, 160));
+        jPanelDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 620, 160));
 
         btnCerrar.setBackground(new java.awt.Color(16, 41, 153));
         btnCerrar.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -120,15 +123,15 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 310, 40));
+        jPanelDatos.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 310, 40));
 
-        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 620, 310));
+        jPanelFondo.add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 670, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,6 +189,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         modelo.addColumn("Apellido");
         modelo.addColumn("Nombres");
         modelo.addColumn("DNI");
+        modelo.addColumn("Ultima Visita");
         jtHistoClinicas.setModel(modelo);
 
         //establecer ancho de las columnas de la tabla
@@ -194,6 +198,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         jtHistoClinicas.getColumnModel().getColumn(2).setPreferredWidth(70);
         jtHistoClinicas.getColumnModel().getColumn(3).setPreferredWidth(100);
         jtHistoClinicas.getColumnModel().getColumn(4).setPreferredWidth(80);
+        jtHistoClinicas.getColumnModel().getColumn(5).setPreferredWidth(80);
         
         //establecer alto de columnas
         jtHistoClinicas.getTableHeader().setPreferredSize(new java.awt.Dimension(0,25));
@@ -208,7 +213,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
         listarHisto = (ArrayList) histoData.listarHistoClinicas();
         if (listarHisto != null) {
             for (HistoriaClinica listar : listarHisto) {
-                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist().format(forma), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci()});
+                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist().format(forma), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci(),listar.getFechaHistUlt().format(forma)});
             }
         }
     }
@@ -217,7 +222,7 @@ public class frmListaHistoClinicas extends javax.swing.JInternalFrame {
     private void buscHistoClinicaPorNomnbre() {
         for (HistoriaClinica listar : listarHisto) {
             if (listar.getNombreHist().startsWith(txtNom.getText())) {
-                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist(), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci()});
+                modelo.addRow(new Object[]{listar.getIdHist(), listar.getFechaHist(), listar.getNombreHist(), listar.getPaciente().getApellidoPaci(), listar.getPaciente().getNombresPaci(), listar.getPaciente().getDniPaci(),listar.getFechaHistUlt().format(forma)});
             }
         }
     }

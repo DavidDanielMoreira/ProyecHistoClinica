@@ -572,11 +572,11 @@ public class frmHistoClinicas extends javax.swing.JInternalFrame {
     private void editHisto() {
         int vIdHisto = Integer.parseInt(txtIdHisto.getText());
         String vNomHisto = txtNomHisto.getText();
-        LocalDate vFecha = LocalDate.parse(txtFechaHisto.getText());
+        LocalDate vFechaAlta = LocalDate.parse(txtFechaHisto.getText());
         int vIdPaci = Integer.parseInt(txtIdPaci.getText());
         String vTratHisto = txtTratHisto.getText();
         //creo el objecto 
-        HistoriaClinica hclinica = new HistoriaClinica(vIdHisto, vFecha, vNomHisto, histoSelec.getPaciente(), mediSelec, vTratHisto, vFecha, true);
+        HistoriaClinica hclinica = new HistoriaClinica(vIdHisto, vFechaAlta, vNomHisto, histoSelec.getPaciente(), mediSelec, vTratHisto, vFecha, true);
         histoData.editarHistoClinica(hclinica);
 
     }
