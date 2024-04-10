@@ -2,7 +2,6 @@ package proyechistoclinica.vistas;
 
 import proyechistoclinica.entidades.*;
 import proyechistoclinica.accesoADatos.*;
-import java.sql.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import javax.swing.JOptionPane;
@@ -392,8 +391,6 @@ public class frmPacientes extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "No se realizo ninguna edición....");
                     limpiarCampos();
                 }
-            }else{
-                 JOptionPane.showMessageDialog(null, "No se realizo ninguna acción conrole si los datos son correctos o hay faltante....");
             }
             if (paciSelec != null && nPaciente == true) {
                 JOptionPane.showMessageDialog(null, "El Dni se encuentra cargado y pertence a " + paciSelec.getApellidoPaci() + " - " + paciSelec.getNombresPaci());
